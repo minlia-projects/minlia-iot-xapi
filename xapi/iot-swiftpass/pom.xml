@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.minlia.iot</groupId>
+    <artifactId>minlia-iot-xapi</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.minlia.iot</groupId>
+  <artifactId>xapi-swiftpass</artifactId>
+  <version>1.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>Minlia IOT XAPI Swiftpass</name>
+
+  <url>https://minlia.com/iot-xapi/</url>
+  <description>Minlia IOT XAPI Swiftpass</description>
+  <inceptionYear>2016</inceptionYear>
+
+  <scm>
+    <connection>
+      scm:git:https://github.com/minlia-projects/minlia-iot-xapi.git
+    </connection>
+    <developerConnection>
+      scm:git:https://github.com/minlia-projects/minlia-iot-xapi.git
+    </developerConnection>
+    <url>https://github.com/minlia-projects/minlia-iot-xapi</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>will</name>
+      <email>will@minlia.com</email>
+      <organization>minlia</organization>
+      <organizationUrl>https://www.minlia.com</organizationUrl>
+    </developer>
+  </developers>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+</project>
