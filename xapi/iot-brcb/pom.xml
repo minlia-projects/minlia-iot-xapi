@@ -4,12 +4,12 @@
   <parent>
     <groupId>com.minlia.iot</groupId>
     <artifactId>minlia-iot-xapi</artifactId>
-    <version>1.0.3.RELEASE</version>
+    <version>1.0.4-SNAPSHOT</version>
   </parent>
 
   <groupId>com.minlia.iot</groupId>
   <artifactId>xapi-brcb</artifactId>
-  <version>1.0.3.RELEASE</version>
+  <version>1.0.4-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Minlia IOT XAPI Brcb</name>
 
@@ -25,7 +25,7 @@
       scm:git:https://github.com/minlia-projects/minlia-iot-xapi.git
     </developerConnection>
     <url>https://github.com/minlia-projects/minlia-iot-xapi</url>
-    <tag>minlia-iot-xapi-parent-1.0.3.RELEASE</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <developers>
