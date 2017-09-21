@@ -21,6 +21,7 @@
 
   <modules>
     <module>xapi</module>
+    <module>sample</module>
   </modules>
   <dependencyManagement>
     <dependencies>

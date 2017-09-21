@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.minlia.iot</groupId>
+    <artifactId>minlia-iot-xapi-parent</artifactId>
+    <version>1.0.5-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.minlia.iot.sample</groupId>
+  <artifactId>xapi-sample-parent</artifactId>
+  <version>1.0.5-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Minlia IOT XAPI Sample Parent</name>
+
+  <url>https://minlia.com/iot-xapi/</url>
+  <description>Minlia IOT XAPI</description>
+  <inceptionYear>2016</inceptionYear>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>com.minlia.cloud</groupId>
+      <artifactId>minlia-cloud-common</artifactId>
+    </dependency>
+
+
+    <dependency>
+      <groupId>com.minlia.iot</groupId>
+      <artifactId>minlia-iot</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <modules>
+    <module>cross-sample</module>
+    <module>iot-xapi-sample</module>
+  </modules>
+
+  <scm>
+    <connection>
+      scm:git:https://github.com/minlia-projects/minlia-iot-xapi.git
+    </connection>
+    <developerConnection>
+      scm:git:https://github.com/minlia-projects/minlia-iot-xapi.git
+    </developerConnection>
+    <url>https://github.com/minlia-projects/minlia-iot-xapi</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>will</name>
+      <email>will@minlia.com</email>
+      <organization>minlia</organization>
+      <organizationUrl>https://www.minlia.com</organizationUrl>
+    </developer>
+  </developers>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
+</project>
