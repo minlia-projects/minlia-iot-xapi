@@ -36,7 +36,6 @@
     </dependency>
   </dependencies>
   <modules>
-    <module>cross-sample</module>
     <module>iot-xapi-sample</module>
   </modules>
 
