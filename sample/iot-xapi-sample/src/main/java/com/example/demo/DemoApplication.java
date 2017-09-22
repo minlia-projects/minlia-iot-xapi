@@ -61,10 +61,11 @@ public class DemoApplication {
       requestData.setLogisticCode("885336485979984406");
       apiRequestBody.setRequestDataObject(requestData);
 
-      StatefulApiResponseBody<KuaidiniaoQueryResponseBody> kuaidiniaoQueryResponseBodyStatefulApiResponseBody = kuaidiniaoApi
+      StatefulApiResponseBody<KuaidiniaoQueryResponseBody> kuaidiniaoQueryResponseBody = kuaidiniaoApi
           .sandbox(true) //设置为沙箱模式
           .query(apiRequestBody);
-      return kuaidiniaoQueryResponseBodyStatefulApiResponseBody;
+      return kuaidiniaoQueryResponseBody;
+
     }
 
     public StatefulApiResponseBody swiftpass() {

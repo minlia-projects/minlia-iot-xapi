@@ -5,6 +5,7 @@ package com.minlia.iot.plugin.swiftpass;
  */
 
 import com.minlia.iot.api.AbstractApi;
+import com.minlia.iot.api.AbstractXmlApi;
 import com.minlia.iot.config.ApiCredentialConfiguration;
 import com.minlia.iot.config.ApiEndpointConfiguration;
 import com.minlia.iot.http.XmlApiHttpExecutor;
@@ -25,7 +26,7 @@ import com.minlia.iot.scope.HttpMediaType;
  * Created by will on 9/10/17.
  * 最终Api样例
  */
-public class SwiftpassApi extends AbstractApi {
+public class SwiftpassApi extends AbstractXmlApi {
 
   //如果需要创建BUILDER方法, 取消注释即可
 //  public SwiftpassApi sandbox(Boolean sandbox) {
@@ -42,12 +43,6 @@ public class SwiftpassApi extends AbstractApi {
     super(apiCredentialConfiguration, apiEndpointConfiguration);
     //定义此接口需要的状态化返回体类型
     apiRuntimeContext.setStatefulResponseBodyClass(SwiftpassStatefulApiResponseBody.class);
-
-    //需要特别指定的
-    apiRuntimeContext.setHttpMediaType(HttpMediaType.Xml);
-    apiRuntimeContext.setApiDeserializer(new XmlApiDeserializer<>());    //可以使用默认配置
-    apiRuntimeContext.setApiSerializer(new XmlApiSerializer<>());
-    apiRuntimeContext.setApiHttpExecutor(new XmlApiHttpExecutor());
 
     //签名请求体
     apiRuntimeContext.setSignatureRequired(Boolean.TRUE);

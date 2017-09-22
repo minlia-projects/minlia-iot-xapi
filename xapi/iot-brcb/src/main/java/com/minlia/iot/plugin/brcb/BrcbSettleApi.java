@@ -1,5 +1,6 @@
 package com.minlia.iot.plugin.brcb;
 
+import com.minlia.iot.api.AbstractJsonApi;
 import com.minlia.iot.config.ApiEndpointConfiguration;
 import com.minlia.iot.plugin.brcb.body.BrcbStatefulApiResponseBody;
 import com.minlia.iot.plugin.brcb.body.api.settle.BrcbT0SettleRequestBody;
@@ -23,7 +24,7 @@ import com.minlia.iot.scope.HttpMediaType;
  * Created by will on 9/10/17.
  * BRCB进件接口为示例, 将继续添加其它接口进来
  */
-public class BrcbSettleApi extends AbstractApi {
+public class BrcbSettleApi extends AbstractJsonApi {
 
   //如果需要创建BUILDER方法, 取消注释即可
   public BrcbSettleApi sandbox(Boolean sandbox) {
@@ -39,15 +40,9 @@ public class BrcbSettleApi extends AbstractApi {
       ApiEndpointConfiguration[] apiEndpointConfiguration) {
     super(apiCredentialConfiguration, apiEndpointConfiguration);
 
-    apiRuntimeContext.setEncoding("UTF-8");
     //定义此接口需要的状态化返回体类型
     apiRuntimeContext.setStatefulResponseBodyClass(BrcbStatefulApiResponseBody.class);
 
-    //需要特别指定的
-    apiRuntimeContext.setHttpMediaType(HttpMediaType.Json);
-    apiRuntimeContext.setApiDeserializer(new JsonApiDeserializer<>());    //可以使用默认配置
-    apiRuntimeContext.setApiSerializer(new JsonApiSerializer<>());
-    apiRuntimeContext.setApiHttpExecutor(new JsonApiHttpExecutor());
 
     //签名请求体
     apiRuntimeContext.setSignatureRequired(Boolean.TRUE);

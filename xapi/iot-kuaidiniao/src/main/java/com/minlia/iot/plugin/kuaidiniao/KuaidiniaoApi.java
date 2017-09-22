@@ -1,6 +1,7 @@
 package com.minlia.iot.plugin.kuaidiniao;
 
 import com.minlia.iot.api.AbstractApi;
+import com.minlia.iot.api.AbstractJsonApi;
 import com.minlia.iot.body.response.StatefulApiResponseBody;
 import com.minlia.iot.config.ApiCredentialConfiguration;
 import com.minlia.iot.config.ApiEndpointConfiguration;
@@ -21,7 +22,7 @@ import com.minlia.iot.scope.HttpMediaType;
  * Created by will on 9/10/17.
  * 最终Api样例
  */
-public class KuaidiniaoApi extends AbstractApi {
+public class KuaidiniaoApi extends AbstractJsonApi {
 
   //如果需要创建BUILDER方法, 取消注释即可
   public KuaidiniaoApi sandbox(Boolean sandbox) {
