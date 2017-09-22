@@ -16,8 +16,8 @@ import com.minlia.iot.plugin.kuaidiniao.body.KuaidiniaoQueryResponseBody;
 import com.minlia.iot.plugin.kuaidiniao.body.query.RequestData;
 import com.minlia.iot.plugin.swiftpass.SwiftpassApi;
 import com.minlia.iot.plugin.swiftpass.body.SwiftpassStatefulApiResponseBody;
-import com.minlia.iot.plugin.swiftpass.body.query.SwiftpassQueryRequestBody;
-import com.minlia.iot.plugin.swiftpass.body.query.SwiftpassQueryResponseBody;
+import com.minlia.iot.plugin.swiftpass.body.query.SwiftpassWechatNativePaymentRequestBody;
+import com.minlia.iot.plugin.swiftpass.body.query.SwiftpassWechatNativePaymentResponseBody;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -71,7 +71,7 @@ public class DemoApplication {
     public StatefulApiResponseBody swiftpass() {
 
 //
-      SwiftpassQueryRequestBody requestBody = new SwiftpassQueryRequestBody();
+      SwiftpassWechatNativePaymentRequestBody requestBody = new SwiftpassWechatNativePaymentRequestBody();
       requestBody.setMchCreateIp("127.0.0.1");
       requestBody.setNotifyUrl("http://227.0.0.1:9001/javak/");
       requestBody.setOutTradeNo("MINLIA-TEST-ORDER-" + RandomStringUtils.randomNumeric(10));//
@@ -79,11 +79,13 @@ public class DemoApplication {
       requestBody.setBody("测试支付");
       requestBody.setNonceStr(RandomStringUtils.randomAlphabetic(30));
 
-      //设置为沙箱模式
-      swiftpassApi.sandbox(true);
-      SwiftpassStatefulApiResponseBody statefulApiResponseBody = swiftpassApi.query(requestBody);
+      SwiftpassStatefulApiResponseBody statefulApiResponseBody = swiftpassApi
+          .sandbox(true)
+          //微信APP支付
+          .wechatNativePayment(requestBody);
 
-      SwiftpassQueryResponseBody apiHttpResponseBody = (SwiftpassQueryResponseBody) statefulApiResponseBody
+      SwiftpassWechatNativePaymentResponseBody apiHttpResponseBody = (SwiftpassWechatNativePaymentResponseBody) statefulApiResponseBody
+
           .getPayload();
 //
       return statefulApiResponseBody;

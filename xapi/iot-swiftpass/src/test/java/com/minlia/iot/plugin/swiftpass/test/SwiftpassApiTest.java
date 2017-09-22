@@ -6,8 +6,8 @@ import static org.junit.Assert.assertTrue;
 
 import com.minlia.iot.plugin.swiftpass.SwiftpassAbstractTest;
 import com.minlia.iot.plugin.swiftpass.body.SwiftpassStatefulApiResponseBody;
-import com.minlia.iot.plugin.swiftpass.body.query.SwiftpassQueryResponseBody;
-import com.minlia.iot.plugin.swiftpass.body.query.SwiftpassQueryRequestBody;
+import com.minlia.iot.plugin.swiftpass.body.query.SwiftpassWechatNativePaymentResponseBody;
+import com.minlia.iot.plugin.swiftpass.body.query.SwiftpassWechatNativePaymentRequestBody;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 
@@ -19,7 +19,7 @@ public class SwiftpassApiTest extends SwiftpassAbstractTest {
   @Test
   public void test_with_success_result() {
 
-    SwiftpassQueryRequestBody requestBody = new SwiftpassQueryRequestBody();
+    SwiftpassWechatNativePaymentRequestBody requestBody = new SwiftpassWechatNativePaymentRequestBody();
     requestBody.setMchCreateIp("127.0.0.1");
     requestBody.setNotifyUrl("http://227.0.0.1:9001/javak/");
     requestBody.setOutTradeNo("MINLIA-TEST-ORDER-" + RandomStringUtils.randomNumeric(10));//
@@ -29,14 +29,14 @@ public class SwiftpassApiTest extends SwiftpassAbstractTest {
 
     //设置为沙箱模式
     swiftpassApi.sandbox(true);
-    SwiftpassStatefulApiResponseBody statefulApiResponseBody = swiftpassApi.query(requestBody);
+    SwiftpassStatefulApiResponseBody statefulApiResponseBody = swiftpassApi.wechatNativePayment(requestBody);
 
     assertNotNull(statefulApiResponseBody);
     assertTrue(statefulApiResponseBody.isSuccess());
 
     assertEquals("0", statefulApiResponseBody.getStatus());
 
-    SwiftpassQueryResponseBody apiHttpResponseBody = (SwiftpassQueryResponseBody) statefulApiResponseBody
+    SwiftpassWechatNativePaymentResponseBody apiHttpResponseBody = (SwiftpassWechatNativePaymentResponseBody) statefulApiResponseBody
         .getPayload();
 
     String appid = apiHttpResponseBody.getAppid();
@@ -47,7 +47,7 @@ public class SwiftpassApiTest extends SwiftpassAbstractTest {
   @Test
   public void test_with_order_already_paid_error_result() {
 
-    SwiftpassQueryRequestBody requestBody = new SwiftpassQueryRequestBody();
+    SwiftpassWechatNativePaymentRequestBody requestBody = new SwiftpassWechatNativePaymentRequestBody();
     requestBody.setMchCreateIp("127.0.0.1");
     requestBody.setNotifyUrl("http://227.0.0.1:9001/javak/");
     requestBody.setOutTradeNo("141903606228");//
@@ -57,12 +57,12 @@ public class SwiftpassApiTest extends SwiftpassAbstractTest {
 
     //设置为沙箱模式
     swiftpassApi.sandbox(true);
-    SwiftpassStatefulApiResponseBody statefulApiResponseBody = swiftpassApi.query(requestBody);
+    SwiftpassStatefulApiResponseBody statefulApiResponseBody = swiftpassApi.wechatNativePayment(requestBody);
 
     assertNotNull(statefulApiResponseBody);
     assertTrue(statefulApiResponseBody.isSuccess());
     assertEquals("0", statefulApiResponseBody.getStatus());
-    SwiftpassQueryResponseBody apiHttpResponseBody = (SwiftpassQueryResponseBody) statefulApiResponseBody
+    SwiftpassWechatNativePaymentResponseBody apiHttpResponseBody = (SwiftpassWechatNativePaymentResponseBody) statefulApiResponseBody
         .getPayload();
     assertEquals("Order paid", apiHttpResponseBody.getErrCode());
     assertEquals("订单已支付", apiHttpResponseBody.getErrMsg());

@@ -15,7 +15,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 @Data
 @Signature
 //@ApiRequestDataTransfer(source = "requestDataObject", target = "requestData", type = "UrlEncode")
-public class SwiftpassQueryRequestBody extends SwiftpassApiHttpRequestBody {
+public class SwiftpassWechatNativePaymentRequestBody extends SwiftpassApiHttpRequestBody {
 
   /**
    * 商品描述	body	是	String(127)	商品描述

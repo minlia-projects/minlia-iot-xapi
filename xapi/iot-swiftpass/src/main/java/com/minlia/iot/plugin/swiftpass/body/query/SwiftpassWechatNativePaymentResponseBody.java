@@ -9,7 +9,7 @@ import lombok.Data;
  * Created by will on 9/10/17.
  */
 @Data
-public class SwiftpassQueryResponseBody extends SwiftpassApiHttpResponseBody {
+public class SwiftpassWechatNativePaymentResponseBody extends SwiftpassApiHttpResponseBody {
 
   /* 返回状态码 */
   @JsonProperty(value = "err_code")
