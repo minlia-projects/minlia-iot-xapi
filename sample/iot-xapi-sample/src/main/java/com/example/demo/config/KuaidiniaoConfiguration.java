@@ -8,6 +8,7 @@ import com.minlia.iot.plugin.kuaidiniao.config.KuaidiniaoApiEndpointConfiguratio
 import com.minlia.iot.scope.ApiRequestMode;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 
 /**
  * Created by will on 9/10/17.
@@ -31,6 +32,7 @@ public class KuaidiniaoConfiguration {
 
 
   @Bean
+  @Lazy
   ApiCredentialConfiguration kuaidiniaoApiCredentialConfigurationProduction() {
     KuaidiniaoApiCredentialConfiguration configuration = new KuaidiniaoApiCredentialConfiguration();
     configuration.setAppKey(appKeyProduction);
@@ -40,6 +42,7 @@ public class KuaidiniaoConfiguration {
   }
 
   @Bean
+  @Lazy
   ApiEndpointConfiguration kuaidiniaoApiEndpointConfigurationProduction() {
     KuaidiniaoApiEndpointConfiguration configuration = new KuaidiniaoApiEndpointConfiguration();
     configuration.setKuaidiniaoQuery(queryProduction);
@@ -48,6 +51,7 @@ public class KuaidiniaoConfiguration {
   }
 
   @Bean
+  @Lazy
   ApiCredentialConfiguration kuaidiniaoApiCredentialConfigurationSandbox() {
     KuaidiniaoApiCredentialConfiguration configuration = new KuaidiniaoApiCredentialConfiguration();
     configuration.setAppKey(appKeySandbox);
@@ -57,6 +61,7 @@ public class KuaidiniaoConfiguration {
   }
 
   @Bean
+  @Lazy
   ApiEndpointConfiguration kuaidiniaoApiEndpointConfigurationSandbox() {
     KuaidiniaoApiEndpointConfiguration configuration = new KuaidiniaoApiEndpointConfiguration();
     configuration.setKuaidiniaoQuery(querySandbox);
@@ -66,6 +71,7 @@ public class KuaidiniaoConfiguration {
 
 
   @Bean
+  @Lazy
   public KuaidiniaoApi kuaidiniaoApi() {
     ApiCredentialConfiguration[] apiCredentialConfigurations = {
         kuaidiniaoApiCredentialConfigurationProduction(),
@@ -76,6 +82,5 @@ public class KuaidiniaoConfiguration {
     return new KuaidiniaoApi(apiCredentialConfigurations,
         apiEndpointConfigurations);
   }
-
 
 }

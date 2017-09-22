@@ -1,6 +1,5 @@
 package com.minlia.iot.plugin.kuaidiniao;
 
-import com.minlia.iot.api.AbstractApi;
 import com.minlia.iot.api.AbstractJsonApi;
 import com.minlia.iot.body.response.StatefulApiResponseBody;
 import com.minlia.iot.config.ApiCredentialConfiguration;
@@ -34,8 +33,9 @@ public class KuaidiniaoApi extends AbstractJsonApi {
    * 总个数只能为环境的个数, 如ApiRequestMode.PRODUCTION, ApiRequestMode.SANDBOX
    * 如果一个都没有则报错
    */
-  public KuaidiniaoApi(ApiCredentialConfiguration[] apiCredentialConfiguration,ApiEndpointConfiguration[] apiEndpointConfiguration) {
-    super(apiCredentialConfiguration,apiEndpointConfiguration);
+  public KuaidiniaoApi(ApiCredentialConfiguration[] apiCredentialConfiguration,
+      ApiEndpointConfiguration[] apiEndpointConfiguration) {
+    super(apiCredentialConfiguration, apiEndpointConfiguration);
     //定义此接口需要的状态化返回体类型
     apiRuntimeContext.setStatefulResponseBodyClass(KuaidiniaoStatefulApiResponseBody.class);
 
@@ -48,9 +48,6 @@ public class KuaidiniaoApi extends AbstractJsonApi {
     apiRuntimeContext.setSignatureRequired(Boolean.TRUE);
     apiRuntimeContext.setSignatureProcessor(new KuaidiniaoSignatureProcessor());
 
-  }
-  public KuaidiniaoApi() {
-    throw new RuntimeException("请使用带参构造方法初始化");
   }
 
   /**
