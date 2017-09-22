@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by will on 9/10/17.
  */
 @Configuration
-public class KuaidiniaoTestConfiguration {
+public class KuaidiniaoConfiguration {
 
 
   private String ebusinessIdSandbox = "1255666";

@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * 不同的api请求参数需要分离成不同的API
  */
 @Configuration
-public class BrcbSettleTestConfiguration {
+public class BrcbSettleConfiguration {
 
   private String ebusinessIdProduction = "C149628461779610201";
   private String appKeyProduction = "acc503c56b0c4fd399f7f7093d25223c";

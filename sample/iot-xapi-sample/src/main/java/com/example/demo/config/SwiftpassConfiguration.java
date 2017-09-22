@@ -9,13 +9,12 @@ import com.minlia.iot.scope.ApiRequestMode;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//import com.minlia.module.xapi.plugin.wechat.WechatPayApi;
 
 /**
  * Created by will on 9/10/17.
  */
 @Configuration
-public class SwiftpassTestConfiguration {
+public class SwiftpassConfiguration {
 
 
   private String mchIdSandbox = "755437000006";
