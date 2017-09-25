@@ -265,7 +265,7 @@ public class BrcbCustomerEnterRequestBody extends BrcbCustomerServiceApiHttpRequ
    */
   @XmlElement(name = "alliedBankNo", required = true)
   @JsonProperty(value = "alliedBankNo")
-  private Integer alliedBankNo;
+  private String alliedBankNo;
 
   /**
    * 身份证正面	rightID	否	varchar(32)	查看上传方式
