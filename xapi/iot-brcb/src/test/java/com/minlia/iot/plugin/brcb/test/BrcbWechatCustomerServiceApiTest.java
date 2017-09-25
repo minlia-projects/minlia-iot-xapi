@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import com.minlia.iot.plugin.brcb.body.BrcbStatefulApiResponseBody;
-import com.minlia.iot.plugin.brcb.BrcbAbstractTest;
+import com.minlia.iot.plugin.brcb.BrcbWechatAbstractTest;
 import com.minlia.iot.plugin.brcb.body.api.cs.BrcbCustomerEnterRequestBody;
 import com.minlia.iot.plugin.brcb.body.api.cs.BrcbCustomerEnterResponseBody;
 import org.junit.Test;
@@ -12,7 +12,7 @@ import org.junit.Test;
 /**
  * Created by will on 9/10/17.
  */
-public class BrcbCustomerServiceApiTest extends BrcbAbstractTest {
+public class BrcbWechatCustomerServiceApiTest extends BrcbWechatAbstractTest {
 
   @Test
   public void test_with_failure_result() {

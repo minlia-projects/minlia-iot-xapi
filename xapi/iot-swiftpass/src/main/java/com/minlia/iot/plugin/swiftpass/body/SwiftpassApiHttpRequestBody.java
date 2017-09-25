@@ -15,6 +15,8 @@ public class SwiftpassApiHttpRequestBody extends ApiHttpRequestBody {
   /**
    * 接口类型	service	是	String(32)
    * 接口类型：pay.weixin.native
+   *
+   *
    */
   @XmlElement(name = "service")
   @JsonProperty(value = "service")

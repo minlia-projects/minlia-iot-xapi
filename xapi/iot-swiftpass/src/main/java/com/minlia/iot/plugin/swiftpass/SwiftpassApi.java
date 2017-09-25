@@ -8,11 +8,13 @@ import com.minlia.iot.api.AbstractXmlApi;
 import com.minlia.iot.config.ApiCredentialConfiguration;
 import com.minlia.iot.config.ApiEndpointConfiguration;
 import com.minlia.iot.plugin.swiftpass.body.SwiftpassStatefulApiResponseBody;
-import com.minlia.iot.plugin.swiftpass.body.query.SwiftpassWechatNativePaymentResponseBody;
+import com.minlia.iot.plugin.swiftpass.body.micropay.SwiftpassWechatMicropayRequestBody;
+import com.minlia.iot.plugin.swiftpass.body.micropay.SwiftpassWechatMicropayResponseBody;
+import com.minlia.iot.plugin.swiftpass.body.nativepayment.SwiftpassWechatNativePaymentResponseBody;
 import com.minlia.iot.plugin.swiftpass.requestor.SwiftpassDefaultApiHttpRequestor;
 import com.minlia.iot.plugin.swiftpass.signature.SwiftpassSignatureProcessor;
 import com.minlia.iot.processor.ApiProcessor;
-import com.minlia.iot.plugin.swiftpass.body.query.SwiftpassWechatNativePaymentRequestBody;
+import com.minlia.iot.plugin.swiftpass.body.nativepayment.SwiftpassWechatNativePaymentRequestBody;
 import com.minlia.iot.plugin.swiftpass.scope.SwiftpassApiScope;
 import com.minlia.iot.plugin.swiftpass.signature.SwiftpassSignatureVerificationProcessor;
 import com.minlia.iot.processor.DefaultApiProcessor;
@@ -63,6 +65,22 @@ public class SwiftpassApi extends AbstractXmlApi {
     ApiProcessor processor = new DefaultApiProcessor(apiRuntimeContext);
 
     return (SwiftpassStatefulApiResponseBody<SwiftpassWechatNativePaymentResponseBody>)new SwiftpassDefaultApiHttpRequestor(processor).request(body);
+  }
+
+  /**
+   * @param body
+   * @return
+   */
+  public SwiftpassStatefulApiResponseBody<SwiftpassWechatMicropayResponseBody> wechatMicropay(SwiftpassWechatMicropayRequestBody body) {
+    //必须与ApiEndpointConfiguration中的配置项保持一至,不然会出现找不到此项的错误
+    apiRuntimeContext.setApiScope(SwiftpassApiScope.ENDPOINT.name());
+
+    body.setServiceType("WECHAT_MICRO");
+
+    apiRuntimeContext.setBusinessResponseBodyClass(SwiftpassWechatMicropayResponseBody.class);
+    ApiProcessor processor = new DefaultApiProcessor(apiRuntimeContext);
+
+    return (SwiftpassStatefulApiResponseBody<SwiftpassWechatMicropayResponseBody>)new SwiftpassDefaultApiHttpRequestor(processor).request(body);
   }
 
 }

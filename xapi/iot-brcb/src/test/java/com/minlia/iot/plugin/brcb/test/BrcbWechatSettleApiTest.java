@@ -7,7 +7,7 @@ import com.minlia.iot.plugin.brcb.body.BrcbStatefulApiResponseBody;
 import com.minlia.iot.plugin.brcb.body.api.settle.BrcbSettleMode;
 import com.minlia.iot.plugin.brcb.body.api.settle.BrcbT0SettleQueryResponseBody;
 import com.minlia.iot.plugin.brcb.body.api.settle.BrcbT0SettleRequestBody;
-import com.minlia.iot.plugin.brcb.BrcbAbstractTest;
+import com.minlia.iot.plugin.brcb.BrcbWechatAbstractTest;
 import com.minlia.iot.plugin.brcb.body.api.settle.BrcbT0SettleQueryRequestBody;
 import com.minlia.iot.plugin.brcb.body.api.settle.BrcbT0SettleResponseBody;
 import org.junit.Test;
@@ -15,7 +15,7 @@ import org.junit.Test;
 /**
  * Created by will on 9/10/17.
  */
-public class BrcbSettleApiTest extends BrcbAbstractTest {
+public class BrcbWechatSettleApiTest extends BrcbWechatAbstractTest {
 
   @Test
   public void test_t0settle_with_failure_result() {

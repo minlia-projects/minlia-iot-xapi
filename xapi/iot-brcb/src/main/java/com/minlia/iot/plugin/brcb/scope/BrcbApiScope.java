@@ -20,5 +20,12 @@ public enum BrcbApiScope implements ApiScopes {
    */
   T0_SETTLE_QUERY
 
+  /**
+   * 交易支付网关
+   */
+
+  ,PAYMENT_GATEWAY
+
+
 
 }

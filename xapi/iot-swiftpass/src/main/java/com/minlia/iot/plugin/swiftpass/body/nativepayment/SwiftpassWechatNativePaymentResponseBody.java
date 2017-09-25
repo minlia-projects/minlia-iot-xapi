@@ -1,4 +1,4 @@
-package com.minlia.iot.plugin.swiftpass.body.query;
+package com.minlia.iot.plugin.swiftpass.body.nativepayment;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.minlia.iot.plugin.swiftpass.body.SwiftpassApiHttpResponseBody;

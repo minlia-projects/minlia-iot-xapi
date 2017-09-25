@@ -10,14 +10,20 @@ import org.springframework.test.context.junit4.SpringRunner;
  * Created by will on 9/10/17.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {BrcbCustomerServiceTestConfiguration.class,BrcbSettleTestConfiguration.class})
-public abstract class BrcbAbstractTest {
+@SpringBootTest(classes = {BrcbCustomerServiceTestConfiguration.class,BrcbSettleTestConfiguration.class,
+    BrcbPaymentWechatTestConfiguration.class,
+
+})
+public abstract class BrcbWechatAbstractTest {
 
   @Autowired
   protected BrcbCustomerServiceApi brcbCustomerServiceApi;
 
   @Autowired
   protected BrcbSettleApi brcbSettleApi;
+
+  @Autowired
+  protected BrcbWechatPaymentApi brcbWechatPaymentApi;
 
   @Before
   public void setUp() throws Exception {
