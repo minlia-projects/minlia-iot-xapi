@@ -9,7 +9,7 @@
 
   <groupId>com.minlia.iot</groupId>
   <artifactId>minlia-iot-xapi-parent</artifactId>
-  <version>1.0.5.RELEASE</version>
+  <version>1.0.6-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Minlia IOT XAPI Parent</name>
 
@@ -133,7 +133,7 @@
       scm:git:https://github.com/minlia-projects/minlia-iot-xapi.git
     </developerConnection>
     <url>https://github.com/minlia-projects/minlia-iot-xapi</url>
-    <tag>1.0.5.RELEASE</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <developers>

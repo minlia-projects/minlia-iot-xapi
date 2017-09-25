@@ -11,7 +11,7 @@
 
   <groupId>com.minlia.iot.sample</groupId>
   <artifactId>xapi-sample</artifactId>
-  <version>1.0.5.RELEASE</version>
+  <version>1.0.6-SNAPSHOT</version>
   <name>Minlia IOT XAPI Sample</name>
 
   <dependencies>
@@ -37,19 +37,19 @@
     <dependency>
       <groupId>com.minlia.iot</groupId>
       <artifactId>xapi-kuaidiniao</artifactId>
-      <version>1.0.5.RELEASE</version>
+      <version>1.0.6-SNAPSHOT</version>
     </dependency>
 
     <dependency>
       <groupId>com.minlia.iot</groupId>
       <artifactId>xapi-brcb</artifactId>
-      <version>1.0.5.RELEASE</version>
+      <version>1.0.6-SNAPSHOT</version>
     </dependency>
 
     <dependency>
       <groupId>com.minlia.iot</groupId>
       <artifactId>xapi-swiftpass</artifactId>
-      <version>1.0.5.RELEASE</version>
+      <version>1.0.6-SNAPSHOT</version>
     </dependency>
 
 
@@ -87,10 +87,4 @@
       </plugin>
     </plugins>
   </build>
-
-
-
-  <scm>
-    <tag>1.0.5.RELEASE</tag>
-  </scm>
 </project>
