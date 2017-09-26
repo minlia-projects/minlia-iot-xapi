@@ -77,7 +77,7 @@ public class BrcbCustomerServiceApi extends AbstractJsonApi {
    */
   public StatefulApiResponseBody customerQuery(BrcbCustomerQueryRequestBody body) {
     //必须与ApiEndpointConfiguration中的配置项保持一至,不然会出现找不到此项的错误
-    apiRuntimeContext.setApiScope(BrcbApiScope.CUSTOMER_QUERY.name());
+    apiRuntimeContext.setApiScope(BrcbApiScope.CUSTOMER_ENTER.name());
 
     //设置业务返回体类名
     apiRuntimeContext.setBusinessResponseBodyClass(BrcbCustomerQueryResponseBody.class);

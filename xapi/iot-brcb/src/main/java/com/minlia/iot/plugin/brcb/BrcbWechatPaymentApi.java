@@ -11,6 +11,8 @@ import com.minlia.iot.plugin.brcb.body.api.payment.wechat.micropay.BrcbPaymentWe
 import com.minlia.iot.plugin.brcb.body.api.payment.wechat.micropay.BrcbPaymentWechatMicropayResponseBody;
 import com.minlia.iot.plugin.brcb.body.api.payment.wechat.qrpay.BrcbPaymentWechatQrpayRequestBody;
 import com.minlia.iot.plugin.brcb.body.api.payment.wechat.qrpay.BrcbPaymentWechatQrpayResponseBody;
+import com.minlia.iot.plugin.brcb.body.api.payment.wechat.unifiedorder.BrcbPaymentWechatUnifiedOrderRequestBody;
+import com.minlia.iot.plugin.brcb.body.api.payment.wechat.unifiedorder.BrcbPaymentWechatUnifiedOrderResponseBody;
 import com.minlia.iot.plugin.brcb.body.api.payment.wechat.webpay.BrcbPaymentWechatWebpayRequestBody;
 import com.minlia.iot.plugin.brcb.body.api.payment.wechat.webpay.BrcbPaymentWechatWebpayResponseBody;
 import com.minlia.iot.plugin.brcb.requestor.BrcbPaymentWechatApiHttpRequestor;
@@ -126,6 +128,25 @@ public class BrcbWechatPaymentApi extends AbstractJsonApi {
     ApiProcessor processor = new DefaultApiProcessor(apiRuntimeContext);
 
     body.setServiceType("WECHAT_APP");
+    //创建请求器并发起请求
+    return new BrcbPaymentWechatApiHttpRequestor(processor).request(body);
+  }
+
+  /**
+   * @param body
+   * @return
+   */
+  public StatefulApiResponseBody unifiedOrder(BrcbPaymentWechatUnifiedOrderRequestBody body) {
+    //必须与ApiEndpointConfiguration中的配置项保持一至,不然会出现找不到此项的错误
+    apiRuntimeContext.setApiScope(BrcbApiScope.PAYMENT_GATEWAY.name());
+
+    //设置业务返回体类名
+    apiRuntimeContext.setBusinessResponseBodyClass(BrcbPaymentWechatUnifiedOrderResponseBody.class);
+
+    //创建处理器
+    ApiProcessor processor = new DefaultApiProcessor(apiRuntimeContext);
+
+    body.setServiceType("WECHAT_UNIFIEDORDER");
     //创建请求器并发起请求
     return new BrcbPaymentWechatApiHttpRequestor(processor).request(body);
   }
