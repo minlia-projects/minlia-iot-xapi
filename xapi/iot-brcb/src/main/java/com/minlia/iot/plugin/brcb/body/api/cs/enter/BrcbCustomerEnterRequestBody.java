@@ -1,7 +1,9 @@
-package com.minlia.iot.plugin.brcb.body.api.cs;
+package com.minlia.iot.plugin.brcb.body.api.cs.enter;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.minlia.iot.annotation.Signature;
+import com.minlia.iot.plugin.brcb.body.api.cs.BrcbCustomerServiceApiHttpRequestBody;
+import com.minlia.iot.plugin.brcb.body.api.cs.BrcbPayChannel;
 import com.minlia.iot.plugin.brcb.body.api.settle.BrcbSettleProcessMode;
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlElement;

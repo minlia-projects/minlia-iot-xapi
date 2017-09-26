@@ -51,13 +51,6 @@ public class BrcbPaymentAlipayQrpayRequestBody extends BrcbPaymentApiHttpRequest
   private String totalFee;
 
   /**
-   * 货币类型	fee_type	否	varchar(16)	默认人民币：CNY
-   */
-  @XmlElement(name = "fee_type" )
-  @JsonProperty(value = "fee_type" )
-  private String feeType="CNY";
-
-  /**
    * 终端 IP    mch_create_ip   是   String(16)  订单生成的机器 IP
    */
   @XmlElement(name = "spbill_create_ip",required = true)

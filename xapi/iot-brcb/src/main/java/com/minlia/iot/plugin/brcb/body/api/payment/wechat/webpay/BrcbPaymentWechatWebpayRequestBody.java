@@ -22,12 +22,6 @@ public class BrcbPaymentWechatWebpayRequestBody extends BrcbPaymentApiHttpReques
   private String body;
 
   /**
-   * 设备号	device_info	是	varchar(32)	终端设备号
-   */
-  @XmlElement(name = "device_info",required = true)
-  private String deviceInfo;
-
-  /**
    * 商户订单号    out_trade_no    是   String(32)  商户系统内部的订单号 ,32 个字符内、 可包含字母,确保 在商户系统唯一
    */
   @XmlElement(name = "out_trade_no",required = true)
@@ -40,14 +34,8 @@ public class BrcbPaymentWechatWebpayRequestBody extends BrcbPaymentApiHttpReques
    */
   @XmlElement(name = "total_fee",required = true)
   @JsonProperty(value = "total_fee",required = true)
-  private String totalFee;
+  private Integer totalFee;
 
-  /**
-   * 货币类型	fee_type	否	varchar(16)	默认人民币：CNY
-   */
-  @XmlElement(name = "fee_type" )
-  @JsonProperty(value = "fee_type" )
-  private String feeType="CNY";
 
   /**
    * 终端 IP    mch_create_ip   是   String(16)  订单生成的机器 IP
@@ -55,7 +43,6 @@ public class BrcbPaymentWechatWebpayRequestBody extends BrcbPaymentApiHttpReques
   @XmlElement(name = "spbill_create_ip",required = true)
   @JsonProperty(value = "spbill_create_ip",required = true)
   private String spbillCreateIp;
-
 
 
   /**

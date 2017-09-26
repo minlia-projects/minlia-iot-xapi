@@ -1,4 +1,4 @@
-package com.minlia.iot.plugin.brcb.body.api.cs;
+package com.minlia.iot.plugin.brcb.body.api.cs.enter;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.minlia.iot.plugin.brcb.body.BrcbApiHttpResponseBody;

@@ -14,6 +14,11 @@ public class BrcbApiEndpointConfiguration extends AbstractApiRequestConfiguratio
   private String customerEnter;
 
   /**
+   * 商户查询服务URL
+   */
+  private String customerQuery;
+
+  /**
    * 支付交易网关
    */
   private String paymentGateway;

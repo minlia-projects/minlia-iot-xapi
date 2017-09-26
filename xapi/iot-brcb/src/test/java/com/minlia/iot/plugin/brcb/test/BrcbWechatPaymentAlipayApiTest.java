@@ -102,13 +102,14 @@ public class BrcbWechatPaymentAlipayApiTest extends BrcbAlipayAbstractTest {
     body.setTotalFee("1");
     body.setBody("测试支付");
     body.setNonceStr(RandomStringUtils.randomAlphabetic(30));
+    body.setDeviceInfo("WEB");
 
     //返回被封装成2层
     //1. 状态化的返回体, 负责整体api调用是否成功型封装
     //2. 具体业务需要的返回体, 在状态化的返回体中 payload中承载, 负责业务返回
     BrcbStatefulApiResponseBody<BrcbPaymentAlipayQrpayResponseBody> statefulApiResponseBody = (BrcbStatefulApiResponseBody) brcbAlipayPaymentApi
 
-        .sandbox(true)
+        .sandbox(false)
         .qrpay(body);
 
     //断言状态化返回体不可以为空
@@ -147,6 +148,7 @@ public class BrcbWechatPaymentAlipayApiTest extends BrcbAlipayAbstractTest {
 
     //断言状态化返回体不可以为空
     assertNotNull(statefulApiResponseBody);
+
 //
 //    //由于提交的参数不全, 所以预期出现以下错误
 //    assertEquals("FAIL", statefulApiResponseBody.getReturnCode());

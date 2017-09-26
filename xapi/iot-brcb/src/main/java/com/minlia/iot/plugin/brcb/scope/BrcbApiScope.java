@@ -11,6 +11,11 @@ public enum BrcbApiScope implements ApiScopes {
    * 商户进件
    */
   CUSTOMER_ENTER,
+
+  /**
+   * 商户进件
+   */
+  CUSTOMER_QUERY,
   /**
    * 商户T0结算
    */

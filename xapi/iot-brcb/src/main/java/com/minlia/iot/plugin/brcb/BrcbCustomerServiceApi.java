@@ -4,22 +4,19 @@ package com.minlia.iot.plugin.brcb;
  * Created by will on 9/19/17.
  */
 
-import com.minlia.iot.api.AbstractApi;
 import com.minlia.iot.api.AbstractJsonApi;
 import com.minlia.iot.body.response.StatefulApiResponseBody;
 import com.minlia.iot.config.ApiCredentialConfiguration;
 import com.minlia.iot.config.ApiEndpointConfiguration;
-import com.minlia.iot.http.JsonApiHttpExecutor;
-import com.minlia.iot.marshal.deserialize.JsonApiDeserializer;
-import com.minlia.iot.marshal.serialize.JsonApiSerializer;
 import com.minlia.iot.plugin.brcb.body.BrcbStatefulApiResponseBody;
-import com.minlia.iot.plugin.brcb.body.api.cs.BrcbCustomerEnterRequestBody;
-import com.minlia.iot.plugin.brcb.body.api.cs.BrcbCustomerEnterResponseBody;
+import com.minlia.iot.plugin.brcb.body.api.cs.enter.BrcbCustomerEnterRequestBody;
+import com.minlia.iot.plugin.brcb.body.api.cs.enter.BrcbCustomerEnterResponseBody;
+import com.minlia.iot.plugin.brcb.body.api.cs.query.BrcbCustomerQueryRequestBody;
+import com.minlia.iot.plugin.brcb.body.api.cs.query.BrcbCustomerQueryResponseBody;
 import com.minlia.iot.plugin.brcb.signature.BrcbCustomerServiceSignatureProcessor;
 import com.minlia.iot.plugin.brcb.signature.BrcbSignatureVerificationProcessor;
 import com.minlia.iot.processor.ApiProcessor;
 import com.minlia.iot.processor.DefaultApiProcessor;
-import com.minlia.iot.scope.HttpMediaType;
 import com.minlia.iot.plugin.brcb.requestor.BrcbCustomerServiceApiHttpRequestor;
 import com.minlia.iot.plugin.brcb.scope.BrcbApiScope;
 
@@ -66,6 +63,24 @@ public class BrcbCustomerServiceApi extends AbstractJsonApi {
 
     //设置业务返回体类名
     apiRuntimeContext.setBusinessResponseBodyClass(BrcbCustomerEnterResponseBody.class);
+
+    //创建处理器
+    ApiProcessor processor = new DefaultApiProcessor(apiRuntimeContext);
+
+    //创建请求器并发起请求
+    return new BrcbCustomerServiceApiHttpRequestor(processor).request(body);
+  }
+
+  /**
+   * @param body
+   * @return
+   */
+  public StatefulApiResponseBody customerQuery(BrcbCustomerQueryRequestBody body) {
+    //必须与ApiEndpointConfiguration中的配置项保持一至,不然会出现找不到此项的错误
+    apiRuntimeContext.setApiScope(BrcbApiScope.CUSTOMER_QUERY.name());
+
+    //设置业务返回体类名
+    apiRuntimeContext.setBusinessResponseBodyClass(BrcbCustomerQueryResponseBody.class);
 
     //创建处理器
     ApiProcessor processor = new DefaultApiProcessor(apiRuntimeContext);

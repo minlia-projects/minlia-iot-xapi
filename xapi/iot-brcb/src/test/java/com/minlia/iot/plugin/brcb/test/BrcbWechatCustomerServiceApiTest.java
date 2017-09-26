@@ -5,8 +5,8 @@ import static org.junit.Assert.assertNotNull;
 
 import com.minlia.iot.plugin.brcb.body.BrcbStatefulApiResponseBody;
 import com.minlia.iot.plugin.brcb.BrcbWechatAbstractTest;
-import com.minlia.iot.plugin.brcb.body.api.cs.BrcbCustomerEnterRequestBody;
-import com.minlia.iot.plugin.brcb.body.api.cs.BrcbCustomerEnterResponseBody;
+import com.minlia.iot.plugin.brcb.body.api.cs.enter.BrcbCustomerEnterRequestBody;
+import com.minlia.iot.plugin.brcb.body.api.cs.enter.BrcbCustomerEnterResponseBody;
 import org.junit.Test;
 
 /**

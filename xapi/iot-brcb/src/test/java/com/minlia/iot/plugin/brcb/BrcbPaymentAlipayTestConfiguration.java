@@ -16,8 +16,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BrcbPaymentAlipayTestConfiguration {
 
-  private String ebusinessIdProduction = "C149628461779610201";
-  private String appKeyProduction = "acc503c56b0c4fd399f7f7093d25223c";
+  private String ebusinessIdProduction = "C150556458293310402";
+  private String appKeyProduction = "217354e2ce0e4518bcd89388631219e6";
   private String paymentProduction = "http://brcb.pufubao.net/gateway";
 
 
