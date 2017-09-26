@@ -9,6 +9,10 @@ import com.minlia.iot.body.response.StatefulApiResponseBody;
 import com.minlia.iot.config.ApiCredentialConfiguration;
 import com.minlia.iot.config.ApiEndpointConfiguration;
 import com.minlia.iot.plugin.brcb.body.BrcbStatefulApiResponseBody;
+import com.minlia.iot.plugin.brcb.body.api.cs.config.BrcbCustomerConfigQueryRequestBody;
+import com.minlia.iot.plugin.brcb.body.api.cs.config.BrcbCustomerConfigQueryResponseBody;
+import com.minlia.iot.plugin.brcb.body.api.cs.config.BrcbCustomerConfigRequestBody;
+import com.minlia.iot.plugin.brcb.body.api.cs.config.BrcbCustomerConfigResponseBody;
 import com.minlia.iot.plugin.brcb.body.api.cs.enter.BrcbCustomerEnterRequestBody;
 import com.minlia.iot.plugin.brcb.body.api.cs.enter.BrcbCustomerEnterResponseBody;
 import com.minlia.iot.plugin.brcb.body.api.cs.query.BrcbCustomerQueryRequestBody;
@@ -81,6 +85,46 @@ public class BrcbCustomerServiceApi extends AbstractJsonApi {
 
     //设置业务返回体类名
     apiRuntimeContext.setBusinessResponseBodyClass(BrcbCustomerQueryResponseBody.class);
+
+    //创建处理器
+    ApiProcessor processor = new DefaultApiProcessor(apiRuntimeContext);
+
+    //创建请求器并发起请求
+    return new BrcbCustomerServiceApiHttpRequestor(processor).request(body);
+  }
+
+  /**
+   * 商户公众账号配置
+   * http://note.youdao.com/share/?token=44AF662F83914546B6F7F93FFBBE69F0&gid=47293425#/
+   * @param body
+   * @return
+   */
+  public StatefulApiResponseBody customerConfig(BrcbCustomerConfigRequestBody body) {
+    //必须与ApiEndpointConfiguration中的配置项保持一至,不然会出现找不到此项的错误
+    apiRuntimeContext.setApiScope(BrcbApiScope.CUSTOMER_ENTER.name());
+
+    //设置业务返回体类名
+    apiRuntimeContext.setBusinessResponseBodyClass(BrcbCustomerConfigResponseBody.class);
+
+    //创建处理器
+    ApiProcessor processor = new DefaultApiProcessor(apiRuntimeContext);
+
+    //创建请求器并发起请求
+    return new BrcbCustomerServiceApiHttpRequestor(processor).request(body);
+  }
+
+  /**
+   * 商户公众账号配置查询
+   * http://note.youdao.com/share/?token=44AF662F83914546B6F7F93FFBBE69F0&gid=47293425#/
+   * @param body
+   * @return
+   */
+  public StatefulApiResponseBody customerConfig(BrcbCustomerConfigQueryRequestBody body) {
+    //必须与ApiEndpointConfiguration中的配置项保持一至,不然会出现找不到此项的错误
+    apiRuntimeContext.setApiScope(BrcbApiScope.CUSTOMER_ENTER.name());
+
+    //设置业务返回体类名
+    apiRuntimeContext.setBusinessResponseBodyClass(BrcbCustomerConfigQueryResponseBody.class);
 
     //创建处理器
     ApiProcessor processor = new DefaultApiProcessor(apiRuntimeContext);
