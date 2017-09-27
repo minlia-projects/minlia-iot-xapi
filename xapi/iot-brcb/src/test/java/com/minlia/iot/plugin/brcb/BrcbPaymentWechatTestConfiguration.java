@@ -16,8 +16,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BrcbPaymentWechatTestConfiguration {
 
-  private String ebusinessIdProduction = "C150226031936310846";
-  private String appKeyProduction = "98abac04672549cfa651a9e52b08fc62";
+  //TODO需要修改
+  private String ebusinessIdProduction = "C149628461779610201";
+  private String appKeyProduction = "acc503c56b0c4fd399f7f7093d25223c";
   private String paymentProduction = "http://brcb.pufubao.net/gateway";
 
 
