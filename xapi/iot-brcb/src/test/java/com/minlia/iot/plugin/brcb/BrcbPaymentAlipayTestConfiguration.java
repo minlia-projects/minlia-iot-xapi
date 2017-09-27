@@ -18,13 +18,16 @@ public class BrcbPaymentAlipayTestConfiguration {
 
   private String ebusinessIdProduction = "C150556458293310402";
   private String appKeyProduction = "217354e2ce0e4518bcd89388631219e6";
+  private String appidProduction="sss";
+
   private String paymentProduction = "http://brcb.pufubao.net/gateway";
 
 
   private String ebusinessIdSandbox = "C149628461779610201";
   private String appKeySandbox = "acc503c56b0c4fd399f7f7093d25223c";
-  private String paymentSandbox = "http://www.brcb-sandbox.sunfund.com/gateway";
 
+  private String paymentSandbox = "http://www.brcb-sandbox.sunfund.com/gateway";
+  private String appidSandbox="sss";
   /**
    * 生产环境
    * @return
@@ -32,8 +35,9 @@ public class BrcbPaymentAlipayTestConfiguration {
   @Bean
   ApiCredentialConfiguration brcbPaymentAlipayApiCredentialConfigurationProduction() {
     BrcbPaymentAlipayApiCredentialConfiguration configuration = new BrcbPaymentAlipayApiCredentialConfiguration();
-    configuration.setMchKey(appKeyProduction);
-    configuration.setMchId(ebusinessIdProduction);
+//    configuration.setMchKey(appKeyProduction);
+//    configuration.setMchId(ebusinessIdProduction);
+    configuration.setAppid(appidProduction);
     configuration.setApiRequestMode(ApiRequestMode.PRODUCTION);
     return configuration;
   }
@@ -54,8 +58,9 @@ public class BrcbPaymentAlipayTestConfiguration {
   @Bean
   ApiCredentialConfiguration brcbPaymentAlipayApiCredentialConfigurationSandbox() {
     BrcbPaymentAlipayApiCredentialConfiguration configuration = new BrcbPaymentAlipayApiCredentialConfiguration();
-    configuration.setMchKey(appKeySandbox);
-    configuration.setMchId(ebusinessIdSandbox);
+//    configuration.setMchKey(appKeySandbox);
+//    configuration.setMchId(ebusinessIdSandbox);
+    configuration.setAppid(appidSandbox);
     configuration.setApiRequestMode(ApiRequestMode.SANDBOX);
     return configuration;
   }
