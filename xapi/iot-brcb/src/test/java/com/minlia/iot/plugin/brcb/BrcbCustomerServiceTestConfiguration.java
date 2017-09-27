@@ -16,13 +16,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BrcbCustomerServiceTestConfiguration {
 
-  private String ebusinessIdProduction = "1256193";
-  private String appKeyProduction = "66d76465-e6d6-4136-a38a-6d3740f813b8";
+
+  private String agentNumProduction = "A149628212021310656";
+  private String agentKeyProduction = "6ec855f4ff854c069a6d457748236d80";
   private String customerEnterProduction = "http://brcb.pufubao.net/customer/service";
 
-
-  private String ebusinessIdSandbox = "A149628212021310656";
-  private String appKeySandbox = "6ec855f4ff854c069a6d457748236d80";
+  private String agentNumSandbox = "A149628212021310656";
+  private String agentKeySandbox = "6ec855f4ff854c069a6d457748236d80";
   private String customerEnterSandbox = "http://www.brcb-sandbox.sunfund.com/customer/service";
 
   /**
@@ -32,8 +32,8 @@ public class BrcbCustomerServiceTestConfiguration {
   @Bean
   ApiCredentialConfiguration brcbCustomerServiceApiCredentialConfigurationProduction() {
     BrcbCustomerServiceApiCredentialConfiguration configuration = new BrcbCustomerServiceApiCredentialConfiguration();
-    configuration.setAgentKey(appKeyProduction);
-    configuration.setAgentNum(ebusinessIdProduction);
+    configuration.setAgentKey(agentKeyProduction);
+    configuration.setAgentNum(agentNumProduction);
     configuration.setApiRequestMode(ApiRequestMode.PRODUCTION);
     return configuration;
   }
@@ -54,8 +54,8 @@ public class BrcbCustomerServiceTestConfiguration {
   @Bean
   ApiCredentialConfiguration brcbCustomerServiceApiCredentialConfigurationSandbox() {
     BrcbCustomerServiceApiCredentialConfiguration configuration = new BrcbCustomerServiceApiCredentialConfiguration();
-    configuration.setAgentKey(appKeySandbox);
-    configuration.setAgentNum(ebusinessIdSandbox);
+    configuration.setAgentKey(agentKeySandbox);
+    configuration.setAgentNum(agentNumSandbox);
     configuration.setApiRequestMode(ApiRequestMode.SANDBOX);
     return configuration;
   }
