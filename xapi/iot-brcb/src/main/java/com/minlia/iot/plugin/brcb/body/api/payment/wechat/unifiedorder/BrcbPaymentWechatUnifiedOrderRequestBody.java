@@ -14,17 +14,20 @@ import org.apache.commons.lang3.RandomStringUtils;
 @Signature
 public class BrcbPaymentWechatUnifiedOrderRequestBody extends BrcbPaymentApiHttpRequestBody {
 
-  @XmlElement(name = "body",required = true)
+  @XmlElement(name = "appid",required = true)
+  @JsonProperty(value = "appid",required = true)
   private String appid;
 
 
-  @XmlElement(name = "body",required = true)
+  @XmlElement(name = "openid",required = true)
+  @JsonProperty(value = "openid",required = true)
   private String openid;
 
   /**
    * 商品描述	body	是	String(127)	商品描述
    */
   @XmlElement(name = "body",required = true)
+  @JsonProperty(value = "body",required = true)
   private String body;
 
   /**
