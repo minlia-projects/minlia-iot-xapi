@@ -37,9 +37,7 @@ public class BrcbPaymentWechatSignatureProcessor<REQUEST extends BrcbPaymentApiH
     signatureBody.setCharset(context.getEncoding());
     signatureBody.setSaltParameterPrefix("");
     signatureBody.setDelimiter("&");
-    signatureBody.setSalt(
-        ((BrcbPaymentWechatApiCredentialConfiguration) context.getPreferApiCredentialConfiguration())
-            .getMchKey());
+    signatureBody.setSalt(requestBody.getMchKey());
     SignatureBinder.bind(signatureBody);
     return signatureBody.getSignature();
   }

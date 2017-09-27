@@ -11,7 +11,7 @@ public class BrcbPaymentWechatApiCredentialConfiguration extends AbstractApiRequ
 
 //  private String mchId;
 
-  private String mchKey;
+//  private String mchKey;
 
 
 }
