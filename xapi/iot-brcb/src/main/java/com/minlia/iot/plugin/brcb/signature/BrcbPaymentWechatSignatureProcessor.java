@@ -9,6 +9,7 @@ import com.minlia.iot.signature.SignatureAlgorithmic;
 import com.minlia.iot.signature.binder.SignatureBinder;
 import com.minlia.iot.signature.sign.DefaultXmlSignatureProcessor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.ReflectionUtils;
 
 /**
  * Created by will on 9/11/17.
@@ -27,6 +28,7 @@ public class BrcbPaymentWechatSignatureProcessor<REQUEST extends BrcbPaymentApiH
 
   @Override
   public String sign(BrcbPaymentApiHttpRequestBody requestBody, ApiRuntimeContext context) {
+
     //将签名后的值绑定到签名字段上 sign
     SignatureBody signatureBody = new SignatureBody();
     signatureBody.setRaw(requestBody);

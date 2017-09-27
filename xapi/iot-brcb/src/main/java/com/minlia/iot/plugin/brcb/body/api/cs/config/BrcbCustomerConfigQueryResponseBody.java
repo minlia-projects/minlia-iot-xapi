@@ -1,6 +1,7 @@
 package com.minlia.iot.plugin.brcb.body.api.cs.config;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.minlia.cloud.body.Body;
 import com.minlia.iot.plugin.brcb.body.BrcbApiHttpResponseBody;
 import javax.xml.bind.annotation.XmlElement;
 import lombok.Data;
@@ -27,9 +28,22 @@ public class BrcbCustomerConfigQueryResponseBody extends BrcbApiHttpResponseBody
   private String resultCode;
 
 
+
+  //{
+//    "return_code": "SUCCESS",
+//        "return_msg": "OK",
+//        "sign": "24F8CEBFF4F4F8D8671A07CA621CE86D",
+//        "result_code": "SUCCESS",
+//        "jsapi_path_list": "{\"jsapi_path_list\":null}",
+//        "appid_config_list": "{\"appid_config_list\":[{\"sub_appid\":\"null\",\"subscribe_appid\":\"\"},{\"sub_appid\":\"wx500e11dc0e1d0a3b\",\"subscribe_appid\":\"\"},{\"sub_appid\":\"wx8d0da24b30e0f110\",\"subscribe_appid\":\"\"}]}"
+//}
   @XmlElement(name = "jsapi_path_list" )
   @JsonProperty(value = "jsapi_path_list")
   private String jsapiPathList;
+
+  @XmlElement(name = "appid_config_list" )
+  @JsonProperty(value = "appid_config_list")
+  private String appidConfigList;
 
 
   @XmlElement(name = "err_code" )
@@ -50,6 +64,11 @@ public class BrcbCustomerConfigQueryResponseBody extends BrcbApiHttpResponseBody
   private String sign;
 
 
+//  @Data
+//  class AppidConfigList implements Body{
+//    private String subAppid;
+//    private String subscribeAppid;
+//  }
 
 
 }

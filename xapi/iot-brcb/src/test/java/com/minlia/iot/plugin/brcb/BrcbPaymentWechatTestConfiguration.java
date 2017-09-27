@@ -34,6 +34,7 @@ public class BrcbPaymentWechatTestConfiguration {
     BrcbPaymentWechatApiCredentialConfiguration configuration = new BrcbPaymentWechatApiCredentialConfiguration();
 //    configuration.setMchKey(appKeyProduction);
 //    configuration.setMchId(ebusinessIdProduction);
+    configuration.setAppid("wx320814777dbe3788");
     configuration.setApiRequestMode(ApiRequestMode.PRODUCTION);
     return configuration;
   }
@@ -56,6 +57,7 @@ public class BrcbPaymentWechatTestConfiguration {
     BrcbPaymentWechatApiCredentialConfiguration configuration = new BrcbPaymentWechatApiCredentialConfiguration();
 //    configuration.setMchKey(appKeySandbox);
 //    configuration.setMchId(ebusinessIdSandbox);
+    configuration.setAppid("wx320814777dbe3788");
     configuration.setApiRequestMode(ApiRequestMode.SANDBOX);
     return configuration;
   }

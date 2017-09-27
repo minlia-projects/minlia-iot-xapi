@@ -79,7 +79,7 @@ public class BrcbPaymentWechatUnifiedOrderRequestBody extends BrcbPaymentApiHttp
    */
   @XmlElement(name = "nonce_str", required = true)
   @JsonProperty(value = "nonce_str")
-  private String nonceStr= RandomStringUtils.randomAlphabetic(31);
+  private String nonceStr= RandomStringUtils.randomAlphabetic(10);
 
 
   /**

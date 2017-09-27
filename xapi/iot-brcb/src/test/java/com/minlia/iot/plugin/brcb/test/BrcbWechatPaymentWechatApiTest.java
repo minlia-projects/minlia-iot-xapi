@@ -160,8 +160,9 @@ public class BrcbWechatPaymentWechatApiTest extends BrcbWechatAbstractTest {
 
     //调用支付模块支付 TODO
     BrcbPaymentWechatUnifiedOrderRequestBody orderRequestBody = new BrcbPaymentWechatUnifiedOrderRequestBody();
-    orderRequestBody.setMchId("C111111");
-    orderRequestBody.setAppid("wx320814777dbe3788");
+    orderRequestBody.setMchId("C150226031936310846");
+    orderRequestBody.setMchKey("98abac04672549cfa651a9e52b08fc62");
+//    orderRequestBody.setAppid("wx320814777dbe3788");
     orderRequestBody.setOpenid("oa6cB0Rnf00D00YfucJyE75bTLrI");
     orderRequestBody.setBody("测试");
     orderRequestBody.setOutTradeNo("TEST-ORDER-" + RandomStringUtils.randomNumeric(10));
