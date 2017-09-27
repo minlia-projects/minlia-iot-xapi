@@ -9,9 +9,9 @@ import lombok.Data;
 public class BrcbPaymentAlipayApiCredentialConfiguration extends AbstractApiRequestConfiguration implements
     ApiCredentialConfiguration {
 
-  private String mchId;
-
-  private String mchKey;
-
+//  private String mchId;
+//
+//  private String mchKey;
+    private String appid;
 
 }

@@ -26,10 +26,8 @@ public class BrcbPaymentAlipayApiHttpRequestor<REQUEST extends BrcbPaymentApiHtt
   public StatefulApiResponseBody<RESPONSE> request(REQUEST body) {
 
     //封装一些通用参数进来, 基本是每次请求都需要的参数
-    body.setMchId(((BrcbPaymentAlipayApiCredentialConfiguration) getApiProcessor().getContext()
-        .getPreferApiCredentialConfiguration()).getMchId());
-
-
+    body.setAppid(((BrcbPaymentAlipayApiCredentialConfiguration) getApiProcessor().getContext()
+        .getPreferApiCredentialConfiguration()).getAppid());
 
     //BRCB无需此种绑定操作
     //快递鸟需要进行此类特殊绑定操作

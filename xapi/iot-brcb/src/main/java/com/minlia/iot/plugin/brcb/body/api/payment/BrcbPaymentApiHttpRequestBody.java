@@ -30,14 +30,12 @@ public class BrcbPaymentApiHttpRequestBody extends ApiHttpRequestBody {
   @JsonProperty(value = "service_type",required = true)
   private String serviceType;
 
-  @XmlElement(name = "mch_id",required = true)
-  @JsonProperty(value = "mch_id")
-  private String mchId;
+  @XmlElement(name = "appid",required = true)
+  @JsonProperty(value = "appid",required = true)
+  private String appid;
 
   @XmlElement(name = "mch_key",required = true)
   @JsonProperty(value = "mch_key")
   private String mchKey;
-
-
 
 }
