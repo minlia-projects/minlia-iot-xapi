@@ -39,8 +39,7 @@ public class BrcbPaymentAlipaySignatureProcessor<REQUEST extends BrcbPaymentApiH
     signatureBody.setSaltParameterPrefix("");
     signatureBody.setDelimiter("&");
     signatureBody.setSalt(
-        ((BrcbPaymentAlipayApiCredentialConfiguration) context.getPreferApiCredentialConfiguration())
-            .getMchKey());
+        requestBody.getMchKey());
     SignatureBinder.bind(signatureBody);
     return signatureBody.getSignature();
   }
