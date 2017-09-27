@@ -14,8 +14,8 @@ import org.apache.commons.lang3.RandomStringUtils;
 @Signature
 public class BrcbPaymentWechatUnifiedOrderRequestBody extends BrcbPaymentApiHttpRequestBody {
 
-  @XmlElement(name = "appid",required = true)
-  @JsonProperty(value = "appid",required = true)
+  @XmlElement(name = "appid" )
+  @JsonProperty(value = "appid" )
   private String appid;
 
 
