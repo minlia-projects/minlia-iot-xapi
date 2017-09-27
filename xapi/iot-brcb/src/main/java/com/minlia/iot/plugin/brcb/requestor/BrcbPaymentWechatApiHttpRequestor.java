@@ -24,9 +24,11 @@ public class BrcbPaymentWechatApiHttpRequestor<REQUEST extends BrcbPaymentApiHtt
   @Override
   public StatefulApiResponseBody<RESPONSE> request(REQUEST body) {
 
+
+    //商户号是每次交易时动态设置的, 所以不需要设置进来
     //封装一些通用参数进来, 基本是每次请求都需要的参数
-    body.setMchId(((BrcbPaymentWechatApiCredentialConfiguration) getApiProcessor().getContext()
-        .getPreferApiCredentialConfiguration()).getMchId());
+//    body.setMchId(((BrcbPaymentWechatApiCredentialConfiguration) getApiProcessor().getContext()
+//        .getPreferApiCredentialConfiguration()).getMchId());
 
 
 

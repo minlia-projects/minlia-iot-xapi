@@ -9,7 +9,7 @@ import lombok.Data;
 public class BrcbPaymentWechatApiCredentialConfiguration extends AbstractApiRequestConfiguration implements
     ApiCredentialConfiguration {
 
-  private String mchId;
+//  private String mchId;
 
   private String mchKey;
 

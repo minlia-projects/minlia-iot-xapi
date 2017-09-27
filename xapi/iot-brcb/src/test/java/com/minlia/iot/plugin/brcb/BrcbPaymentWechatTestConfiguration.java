@@ -32,8 +32,8 @@ public class BrcbPaymentWechatTestConfiguration {
   @Bean
   ApiCredentialConfiguration brcbPaymentWechatApiCredentialConfigurationProduction() {
     BrcbPaymentWechatApiCredentialConfiguration configuration = new BrcbPaymentWechatApiCredentialConfiguration();
-    configuration.setMchKey(appKeyProduction);
-    configuration.setMchId(ebusinessIdProduction);
+//    configuration.setMchKey(appKeyProduction);
+//    configuration.setMchId(ebusinessIdProduction);
     configuration.setApiRequestMode(ApiRequestMode.PRODUCTION);
     return configuration;
   }
@@ -54,8 +54,8 @@ public class BrcbPaymentWechatTestConfiguration {
   @Bean
   ApiCredentialConfiguration brcbPaymentWechatApiCredentialConfigurationSandbox() {
     BrcbPaymentWechatApiCredentialConfiguration configuration = new BrcbPaymentWechatApiCredentialConfiguration();
-    configuration.setMchKey(appKeySandbox);
-    configuration.setMchId(ebusinessIdSandbox);
+//    configuration.setMchKey(appKeySandbox);
+//    configuration.setMchId(ebusinessIdSandbox);
     configuration.setApiRequestMode(ApiRequestMode.SANDBOX);
     return configuration;
   }

@@ -50,6 +50,7 @@ public class BrcbWechatCustomerServiceApiTest extends BrcbWechatAbstractTest {
 
     //设置请求参数
     body.setServiceType("CUSTOMER_CONFIG");
+
     //C150226031936310846
     body.setCustomerNum("C150226031936310846");
     body.setAppid("wx8d0da24b30e0f110");
