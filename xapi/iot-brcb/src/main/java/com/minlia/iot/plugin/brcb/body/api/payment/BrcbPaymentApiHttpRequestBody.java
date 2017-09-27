@@ -1,5 +1,6 @@
 package com.minlia.iot.plugin.brcb.body.api.payment;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.minlia.iot.body.ApiHttpRequestBody;
 import javax.xml.bind.annotation.XmlElement;
@@ -37,6 +38,7 @@ public class BrcbPaymentApiHttpRequestBody extends ApiHttpRequestBody {
 //  @XmlElement(name = "mch_key",required = true)
 //  @JsonProperty(value = "mch_key")
 
+  @JsonIgnore
   private String mchKey;
 
 }
