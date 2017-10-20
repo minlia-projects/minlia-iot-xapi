@@ -21,7 +21,6 @@ public class SwiftpassWechatJspayPayInfoBody {
   private String signType;
 
   @JsonProperty(value = "package")
-  @XmlElement(name = "package")
   private String packages;
 
   private String callbackUrl;
