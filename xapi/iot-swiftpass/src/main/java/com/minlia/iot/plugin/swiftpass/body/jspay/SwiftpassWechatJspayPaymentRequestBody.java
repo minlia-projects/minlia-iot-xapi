@@ -75,8 +75,6 @@ public class SwiftpassWechatJspayPaymentRequestBody extends SwiftpassApiHttpRequ
   @XmlElement(name = "mch_create_ip",required = true)
   private String mchCreateIp;
 
-
-
   /**
    * 通知地址 notify_url  是   String(255)
    *接收浦发银行通知的 URL，需给绝对路径，255 字符内格式 如:http://wap.tenpay.com/tenpay.asp，确 保浦发银行能通过互联网访问该地址
@@ -90,8 +88,6 @@ public class SwiftpassWechatJspayPaymentRequestBody extends SwiftpassApiHttpRequ
   @XmlElement(name = "nonce_str", required = true)
   @JsonProperty(value = "nonce_str")
   private String nonceStr= RandomStringUtils.randomAlphabetic(31);
-
-
 
   /**
    *签名 sign    是   String(32)  MD5 签名结果，详见“第 4 章 MD5 签名规则”

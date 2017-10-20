@@ -25,15 +25,12 @@ public class SwiftpassStatefulApiResponseBody<RESPONSE extends SwiftpassApiHttpR
   @JsonProperty(value = "charset")
   private String charset ;
 
-
   /**
    * 签名方式	sign_type	否	String(8)	签名类型，取值：MD5默认：MD5
    */
   @XmlElement(name = "sign_type")
   @JsonProperty(value = "sign_type")
   private String signType ;
-
-
 
   /* 返回状态码 */
   @JsonProperty(value = "status")
@@ -44,7 +41,6 @@ public class SwiftpassStatefulApiResponseBody<RESPONSE extends SwiftpassApiHttpR
   @JsonProperty(value = "message")
   @XmlElement(name = "message")
   private String message;
-
 
   @ApiRequestEntity
   private RESPONSE payload;
