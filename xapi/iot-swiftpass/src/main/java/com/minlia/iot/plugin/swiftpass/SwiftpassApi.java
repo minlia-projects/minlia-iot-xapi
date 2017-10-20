@@ -8,6 +8,8 @@ import com.minlia.iot.api.AbstractXmlApi;
 import com.minlia.iot.config.ApiCredentialConfiguration;
 import com.minlia.iot.config.ApiEndpointConfiguration;
 import com.minlia.iot.plugin.swiftpass.body.SwiftpassStatefulApiResponseBody;
+import com.minlia.iot.plugin.swiftpass.body.jspay.SwiftpassWechatJspayPaymentRequestBody;
+import com.minlia.iot.plugin.swiftpass.body.jspay.SwiftpassWechatJspayPaymentResponseBody;
 import com.minlia.iot.plugin.swiftpass.body.micropay.SwiftpassWechatMicropayRequestBody;
 import com.minlia.iot.plugin.swiftpass.body.micropay.SwiftpassWechatMicropayResponseBody;
 import com.minlia.iot.plugin.swiftpass.body.nativepayment.SwiftpassWechatNativePaymentResponseBody;
@@ -50,6 +52,22 @@ public class SwiftpassApi extends AbstractXmlApi {
     apiRuntimeContext.setSignatureVerificationProcessor(new SwiftpassSignatureVerificationProcessor());   //可以使用默认配置
   }
 
+
+  /**
+   * @param body
+   * @return
+   */
+  public SwiftpassStatefulApiResponseBody<SwiftpassWechatJspayPaymentResponseBody> wechatJspay(SwiftpassWechatJspayPaymentRequestBody body) {
+    //必须与ApiEndpointConfiguration中的配置项保持一至,不然会出现找不到此项的错误
+    apiRuntimeContext.setApiScope(SwiftpassApiScope.ENDPOINT.name());
+
+    body.setService("pay.weixin.jspay");
+
+    apiRuntimeContext.setBusinessResponseBodyClass(SwiftpassWechatJspayPaymentResponseBody.class);
+    ApiProcessor processor = new DefaultApiProcessor(apiRuntimeContext);
+
+    return (SwiftpassStatefulApiResponseBody<SwiftpassWechatJspayPaymentResponseBody>)new SwiftpassDefaultApiHttpRequestor(processor).request(body);
+  }
 
   /**
    * @param body

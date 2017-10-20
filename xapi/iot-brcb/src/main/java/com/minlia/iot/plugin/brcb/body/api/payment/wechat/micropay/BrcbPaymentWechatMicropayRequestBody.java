@@ -15,10 +15,15 @@ import org.apache.commons.lang3.RandomStringUtils;
 public class BrcbPaymentWechatMicropayRequestBody extends BrcbPaymentApiHttpRequestBody {
 
 
+  @XmlElement(name = "mch_id",required = true)
+  @JsonProperty(value = "mch_id")
+  private String mchId;
+
   /**
    * 商品描述	body	是	String(127)	商品描述
    */
   @XmlElement(name = "body",required = true)
+  @JsonProperty(value = "body",required = true)
   private String body;
 
   /**

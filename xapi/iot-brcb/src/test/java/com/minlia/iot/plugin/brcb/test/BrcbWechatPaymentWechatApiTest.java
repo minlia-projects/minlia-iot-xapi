@@ -28,20 +28,21 @@ public class BrcbWechatPaymentWechatApiTest extends BrcbWechatAbstractTest {
     //创建请求体
     BrcbPaymentWechatAppRequestBody body = new BrcbPaymentWechatAppRequestBody();
 
-
+    body.setMchId("C150226031936310846");
+    body.setMchKey("98abac04672549cfa651a9e52b08fc62");
     body.setNotifyUrl("http://will.dev.pufubao.net/n/brcb");
     body.setOutTradeNo("OUTTRADENO-" + RandomStringUtils.randomNumeric(4));
     body.setSpbillCreateIp("127.0.0.1");
     body.setOutTradeNo("TEST-ORDER-" + RandomStringUtils.randomNumeric(10));//
     body.setTotalFee("1");
-    body.setBody("测试支付");
+    body.setBody("APPPAY");
     body.setNonceStr(RandomStringUtils.randomAlphabetic(30));
 
     //返回被封装成2层
     //1. 状态化的返回体, 负责整体api调用是否成功型封装
     //2. 具体业务需要的返回体, 在状态化的返回体中 payload中承载, 负责业务返回
     BrcbStatefulApiResponseBody<BrcbPaymentWechatAppResponseBody> statefulApiResponseBody = (BrcbStatefulApiResponseBody) brcbWechatPaymentApi
-        .sandbox(true)
+        .sandbox(false)
         .app(body);
 
     //断言状态化返回体不可以为空
@@ -59,13 +60,14 @@ public class BrcbWechatPaymentWechatApiTest extends BrcbWechatAbstractTest {
     //创建请求体
     BrcbPaymentWechatWebpayRequestBody body = new BrcbPaymentWechatWebpayRequestBody();
 
-
+    body.setMchId("C150226031936310846");
+    body.setMchKey("98abac04672549cfa651a9e52b08fc62");
     body.setNotifyUrl("http://will.dev.pufubao.net/n/brcb");
     body.setOutTradeNo("OUTTRADENO-" + RandomStringUtils.randomNumeric(4));
     body.setSpbillCreateIp("127.0.0.1");
     body.setOutTradeNo("TEST-ORDER-" + RandomStringUtils.randomNumeric(10));//
     body.setTotalFee(1);
-    body.setBody("测试支付");
+    body.setBody("Webpay");
     body.setNonceStr(RandomStringUtils.randomAlphabetic(30));
 
     //返回被封装成2层
@@ -73,7 +75,7 @@ public class BrcbWechatPaymentWechatApiTest extends BrcbWechatAbstractTest {
     //2. 具体业务需要的返回体, 在状态化的返回体中 payload中承载, 负责业务返回
     BrcbStatefulApiResponseBody<BrcbPaymentWechatWebpayResponseBody> statefulApiResponseBody = (BrcbStatefulApiResponseBody) brcbWechatPaymentApi
 
-        .sandbox(true)
+        .sandbox(false)
         .webpay(body);
 
     //断言状态化返回体不可以为空
@@ -93,12 +95,17 @@ public class BrcbWechatPaymentWechatApiTest extends BrcbWechatAbstractTest {
     BrcbPaymentWechatQrpayRequestBody body = new BrcbPaymentWechatQrpayRequestBody();
 
 
+    body.setAppid("");
+    body.setMchId("C150226031936310846");
+    body.setMchKey("98abac04672549cfa651a9e52b08fc62");
     body.setNotifyUrl("http://will.dev.pufubao.net/n/brcb");
     body.setOutTradeNo("OUTTRADENO-" + RandomStringUtils.randomNumeric(4));
     body.setSpbillCreateIp("127.0.0.1");
     body.setOutTradeNo("TEST-ORDER-" + RandomStringUtils.randomNumeric(10));//
     body.setTotalFee("1");
-    body.setBody("测试支付");
+    body.setDeviceInfo("ABC");
+    body.setBody("Qrpay");
+//    body.setDeviceInfo("WEB");
     body.setNonceStr(RandomStringUtils.randomAlphabetic(30));
 
     //返回被封装成2层
@@ -106,7 +113,7 @@ public class BrcbWechatPaymentWechatApiTest extends BrcbWechatAbstractTest {
     //2. 具体业务需要的返回体, 在状态化的返回体中 payload中承载, 负责业务返回
     BrcbStatefulApiResponseBody<BrcbPaymentWechatQrpayResponseBody> statefulApiResponseBody = (BrcbStatefulApiResponseBody) brcbWechatPaymentApi
 
-        .sandbox(true)
+        .sandbox(false)
         .qrpay(body);
 
     //断言状态化返回体不可以为空
@@ -122,11 +129,17 @@ public class BrcbWechatPaymentWechatApiTest extends BrcbWechatAbstractTest {
   @Test
   public void test_payment_micropay_with_success_result() {
 
+
+    //
+//    private String ebusinessIdSandbox = "C149628461779610201";
+//    private String appKeySandbox = "acc503c56b0c4fd399f7f7093d25223c";
     //创建请求体
     BrcbPaymentWechatMicropayRequestBody body = new BrcbPaymentWechatMicropayRequestBody();
+    body.setMchId("C149628461779610201");
+    body.setMchKey("acc503c56b0c4fd399f7f7093d25223c");
+    body.setAuthCode("136290895107835475");
 
-    body.setAuthCode("135012455576441715");
-
+    body.setAppid("");
     body.setOutTradeNo("OUTTRADENO-" + RandomStringUtils.randomNumeric(4));
     body.setSpbillCreateIp("127.0.0.1");
     body.setOutTradeNo("TEST-ORDER-" + RandomStringUtils.randomNumeric(10));//
@@ -155,13 +168,13 @@ public class BrcbWechatPaymentWechatApiTest extends BrcbWechatAbstractTest {
   public void test_payment_unifiedOrder_with_success_result() {
 
     //创建请求体
-    BrcbPaymentWechatUnifiedOrderRequestBody body = new BrcbPaymentWechatUnifiedOrderRequestBody();
+//    BrcbPaymentWechatUnifiedOrderRequestBody body = new BrcbPaymentWechatUnifiedOrderRequestBody();
 
 
     //调用支付模块支付 TODO
     BrcbPaymentWechatUnifiedOrderRequestBody orderRequestBody = new BrcbPaymentWechatUnifiedOrderRequestBody();
-    orderRequestBody.setMchId("C150226031936310846");
-    orderRequestBody.setMchKey("98abac04672549cfa651a9e52b08fc62");
+    orderRequestBody.setMchId("C149628461779610201");
+    orderRequestBody.setMchKey("acc503c56b0c4fd399f7f7093d25223c");
 //    orderRequestBody.setAppid("wx320814777dbe3788");
     orderRequestBody.setOpenid("oa6cB0Rnf00D00YfucJyE75bTLrI");
     orderRequestBody.setBody("测试");
@@ -183,7 +196,7 @@ public class BrcbWechatPaymentWechatApiTest extends BrcbWechatAbstractTest {
     //1. 状态化的返回体, 负责整体api调用是否成功型封装
     //2. 具体业务需要的返回体, 在状态化的返回体中 payload中承载, 负责业务返回
     BrcbStatefulApiResponseBody<BrcbPaymentWechatUnifiedOrderResponseBody> statefulApiResponseBody = (BrcbStatefulApiResponseBody) brcbWechatPaymentApi
-        .sandbox(false)
+        .sandbox(true)
         .unifiedOrder(orderRequestBody);
 
     //断言状态化返回体不可以为空

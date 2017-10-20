@@ -17,9 +17,9 @@ import org.springframework.context.annotation.Configuration;
 public class BrcbCustomerServiceTestConfiguration {
 
 
-  //TODO 注意, 实际使用的时候需要修改这里的值
-  private String agentNumProduction = "A149628212021310656";
-  private String agentKeyProduction = "6ec855f4ff854c069a6d457748236d80";
+  //TODO 进件的参数注意, 实际使用的时候需要修改这里的值
+  private String agentNumProduction = "A149267680412610147";
+  private String agentKeyProduction = "a7b3078270ed4f77830b8c1c06276037";
   private String customerEnterProduction = "http://brcb.pufubao.net/customer/service";
 
   private String agentNumSandbox = "A149628212021310656";

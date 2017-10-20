@@ -1,4 +1,4 @@
-package com.minlia.iot.plugin.swiftpass.body.nativepayment;
+package com.minlia.iot.plugin.swiftpass.body.jspay;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.minlia.iot.annotation.Signature;
@@ -15,13 +15,45 @@ import org.apache.commons.lang3.RandomStringUtils;
 @Data
 @Signature
 //@ApiRequestDataTransfer(source = "requestDataObject", target = "requestData", type = "UrlEncode")
-public class SwiftpassWechatNativePaymentRequestBody extends SwiftpassApiHttpRequestBody {
+public class SwiftpassWechatJspayPaymentRequestBody extends SwiftpassApiHttpRequestBody {
 
   /**
    * 商品描述	body	是	String(127)	商品描述
    */
   @XmlElement(name = "body",required = true)
+  @JsonProperty(value = "body")
   private String body;
+
+  /**
+   * 是否原生态	is_raw	否	String(1)	值为1：是；值为0：否；不传默认是0
+   */
+  @XmlElement(name = "is_raw")
+  @JsonProperty(value = "is_raw")
+  private String  isRaw;
+
+  /**
+   * 是否小程序支付	is_minipg	否	String(1)	值为1，表示小程序支付；不传或值不为1，表示公众账号内支付
+   */
+  @XmlElement(name = "is_minipg")
+  @JsonProperty(value = "is_minipg")
+  private String  isMinipg;
+
+  /**
+   * 用户openid	sub_openid	是	String(128)	微信用户关注商家公众号的openid（注：使用测试号时此参数置空，即不要传这个参数，使用正式商户号时才传入，参数名是sub_openid，具体请看文档最后注意事项第7点）
+   */
+  @XmlElement(name = "sub_openid",required = true)
+  @JsonProperty(value = "sub_openid")
+  private String  subOpenid;
+
+  /**
+   * 公众账号或小程序ID
+   sub_appid	是	String(32)
+   当发起公众号支付时，值是微信公众平台基本配置中的AppID(应用ID)；当发起小程序支付时，值是对应小程序的AppID
+   */
+  @XmlElement(name = "sub_appid",required = true)
+  @JsonProperty(value = "sub_appid")
+  private String  subAppid;
+
 
 
   /**
