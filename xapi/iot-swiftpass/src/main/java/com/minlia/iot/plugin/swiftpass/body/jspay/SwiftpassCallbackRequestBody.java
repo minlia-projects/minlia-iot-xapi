@@ -67,7 +67,7 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
      * 返回状态码	 0表示成功，非0表示失败此字段是通信标识，非交易标识，交易是否成功需要查看 result_code 来判断
      */
     @XmlElement(name = "status")
-    private Integer status;
+    private String status;
 
     /**
      * 返回信息，如非空，为错误原因签名失败参数格式校验错误
@@ -83,19 +83,19 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
      * 业务结果	0表示成功非0表示失败
      */
     @XmlElement(name = "result_code")
-    private Integer resultCode;
+    private String resultCode;
 
     /**
      * 商户号，由平台分配
      */
     @XmlElement(name = "mch_id")
-    private Integer mchId;
+    private String mchId;
 
     /**
      * 终端设备号
      */
     @XmlElement(name = "device_info")
-    private Integer deviceInfo;
+    private String deviceInfo;
 
     /**
      * 随机字符串，不长于 32 位
@@ -120,8 +120,6 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
      */
     @XmlElement(name = "sign")
     private String sign;
-
-
 
     //以下字段在 status 和 result_code 都为 0的时候有返回
 
@@ -153,7 +151,7 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
      * 支付结果信息,支付成功时为空
      */
     @XmlElement(name = "pay_info")
-    private Integer pay_info;
+    private String pay_info;
 
     /**
      * 平台交易号
@@ -257,11 +255,11 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
         this.signType = signType;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -273,27 +271,27 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
         this.message = message;
     }
 
-    public Integer getResultCode() {
+    public String getResultCode() {
         return resultCode;
     }
 
-    public void setResultCode(Integer resultCode) {
+    public void setResultCode(String resultCode) {
         this.resultCode = resultCode;
     }
 
-    public Integer getMchId() {
+    public String getMchId() {
         return mchId;
     }
 
-    public void setMchId(Integer mchId) {
+    public void setMchId(String mchId) {
         this.mchId = mchId;
     }
 
-    public Integer getDeviceInfo() {
+    public String getDeviceInfo() {
         return deviceInfo;
     }
 
-    public void setDeviceInfo(Integer deviceInfo) {
+    public void setDeviceInfo(String deviceInfo) {
         this.deviceInfo = deviceInfo;
     }
 
@@ -319,6 +317,14 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
 
     public void setErrMsg(String errMsg) {
         this.errMsg = errMsg;
+    }
+
+    public String getSign() {
+        return sign;
+    }
+
+    public void setSign(String sign) {
+        this.sign = sign;
     }
 
     public String getOpenid() {
@@ -353,11 +359,11 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
         this.payResult = payResult;
     }
 
-    public Integer getPay_info() {
+    public String getPay_info() {
         return pay_info;
     }
 
-    public void setPay_info(Integer pay_info) {
+    public void setPay_info(String pay_info) {
         this.pay_info = pay_info;
     }
 
