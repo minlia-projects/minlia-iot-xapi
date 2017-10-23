@@ -25,7 +25,7 @@ import java.util.*;
  * @author    
  */
 public class XmlUtils {
-    
+
     /** <一句话功能简述>
      * <功能详细描述>request转字符串
      * @param request

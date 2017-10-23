@@ -12,29 +12,27 @@ import java.io.Serializable;
 
 /**
  //for swiftpass only
- <xml>
- <attach><![CDATA[TS100000000001149245076933000660]]></attach>
- <bank_type><![CDATA[CFT]]></bank_type>
+ <xml><bank_type><![CDATA[CFT]]></bank_type>
  <charset><![CDATA[UTF-8]]></charset>
  <fee_type><![CDATA[CNY]]></fee_type>
  <is_subscribe><![CDATA[N]]></is_subscribe>
- <mch_id><![CDATA[103580003270]]></mch_id>
- <nonce_str><![CDATA[1492450778449]]></nonce_str>
- <openid><![CDATA[o7PjgtyHptTwPILLfptTmplDomFg]]></openid>
- <out_trade_no><![CDATA[TS100000000001149245076933000660]]></out_trade_no>
- <out_transaction_id><![CDATA[4004642001201704187397889757]]></out_transaction_id>
+ <mch_id><![CDATA[101500146325]]></mch_id>
+ <nonce_str><![CDATA[1508747368049]]></nonce_str>
+ <openid><![CDATA[o-Rj7wDPLuZy4lcJBCFz-wkoMR8Y]]></openid>
+ <out_trade_no><![CDATA[O15087473265905034]]></out_trade_no>
+ <out_transaction_id><![CDATA[4200000016201710239841981115]]></out_transaction_id>
  <pay_result><![CDATA[0]]></pay_result>
  <result_code><![CDATA[0]]></result_code>
- <sign><![CDATA[AE96A2F5E974AF72334A3F7BD5C5C8AA]]></sign>
+ <sign><![CDATA[D3BA5BD6BB6CD85DC2CBC821742C64DE]]></sign>
  <sign_type><![CDATA[MD5]]></sign_type>
  <status><![CDATA[0]]></status>
- <sub_appid><![CDATA[wx62eb98733173fa88]]></sub_appid>
- <sub_is_subscribe><![CDATA[Y]]></sub_is_subscribe>
- <sub_openid><![CDATA[oGM7bwGdkotqW25z8Bwm05hrXDZY]]></sub_openid>
- <time_end><![CDATA[20170418013937]]></time_end>
+ <sub_appid><![CDATA[wx8d0da24b30e0f110]]></sub_appid>
+ <sub_is_subscribe><![CDATA[N]]></sub_is_subscribe>
+ <sub_openid><![CDATA[oICYK0S0kMA1VKT33LpD-4VDhK3g]]></sub_openid>
+ <time_end><![CDATA[20171023162927]]></time_end>
  <total_fee><![CDATA[1]]></total_fee>
  <trade_type><![CDATA[pay.weixin.jspay]]></trade_type>
- <transaction_id><![CDATA[103580003270201704185158004174]]></transaction_id>
+ <transaction_id><![CDATA[101500146325201710232216127980]]></transaction_id>
  <version><![CDATA[2.0]]></version>
  </xml>
 
