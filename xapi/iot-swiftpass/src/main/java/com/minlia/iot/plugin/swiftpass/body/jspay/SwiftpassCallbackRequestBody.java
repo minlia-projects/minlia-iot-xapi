@@ -4,10 +4,6 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 /**
@@ -38,41 +34,34 @@ import java.io.Serializable;
 
  attach=TS100000000001149245184212600276&bank_type=CFT&charset=UTF-8&fee_type=CNY&is_subscribe=N&mch_id=103580003270&nonce_str=1492451851250&openid=o7PjgtyHptTwPILLfptTmplDomFg&out_trade_no=TS100000000001149245184212600276&out_transaction_id=4004642001201704187397984756&pay_result=0&result_code=0&status=0&sub_appid=wx62eb98733173fa88&sub_is_subscribe=Y&sub_openid=oGM7bwGdkotqW25z8Bwm05hrXDZY&time_end=20170418015730&total_fee=1&trade_type=pay.weixin.jspay&transaction_id=103580003270201704181196670406&version=2.0&key=d83e2ec91d72e4a00ffa7177353f8c47
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "xml")
-//@PaymentSignedEntity
-public class SwiftpassCallbackRequestBody implements Serializable /*implements SignableNotificationRequestBody*/ {
+public class SwiftpassCallbackRequestBody implements Serializable {
+
 
     //后台通知通过请求中的notify_url进行， post
 
     /**
      * 版本号      version默认值是2.0。
      */
-    @XmlElement(name = "version")
     private String version;
 
     /**
      * 字符集	可选值 UTF-8 ，默认为 UTF-8。
      */
-    @XmlElement(name = "charset")
     private String charset;
 
     /**
      * 签名方式	签名类型，取值：MD5默认：MD5
      */
-    @XmlElement(name = "sign_type")
-    private String signType;
+    private String sign_type;
 
     /**
      * 返回状态码	 0表示成功，非0表示失败此字段是通信标识，非交易标识，交易是否成功需要查看 result_code 来判断
      */
-    @XmlElement(name = "status")
     private String status;
 
     /**
      * 返回信息，如非空，为错误原因签名失败参数格式校验错误
      */
-    @XmlElement(name = "message")
     private String message;
 
 
@@ -82,43 +71,36 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
     /**
      * 业务结果	0表示成功非0表示失败
      */
-    @XmlElement(name = "result_code")
-    private String resultCode;
+    private String result_code;
 
     /**
      * 商户号，由平台分配
      */
-    @XmlElement(name = "mch_id")
-    private String mchId;
+    private String mch_id;
 
     /**
      * 终端设备号
      */
-    @XmlElement(name = "device_info")
-    private String deviceInfo;
+    private String device_info;
 
     /**
      * 随机字符串，不长于 32 位
      */
-    @XmlElement(name = "nonce_str")
-    private String nonceStr;
+    private String nonce_str;
 
     /**
      * 错误代码 参考错误码
      */
-    @XmlElement(name = "err_code")
-    private String errCode;
+    private String err_code;
 
     /**
      * 错误代码描述   结果信息描述
      */
-    @XmlElement(name = "err_msg")
-    private String errMsg;
+    private String err_msg;
 
     /**
      * 签名   MD5签名结果，详见“安全规范”
      */
-    @XmlElement(name = "sign")
     private String sign;
 
     //以下字段在 status 和 result_code 都为 0的时候有返回
@@ -126,110 +108,92 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
     /**
      * 用户在商户 appid 下的唯一标识
      */
-    @XmlElement(name = "openid")
     private String openid;
 
     /**
      * 交易类型:pay.weixin.jspay
      */
-    @XmlElement(name = "trade_type")
-    private String tradeType;
+    private String trade_type;
 
     /**
      * 用户是否关注公众账号，Y-关注，N-未关注，仅在公众账号类型支付有效
      */
-    @XmlElement(name = "is_subscribe")
-    private String isSubscribe;
+    private String is_subscribe;
 
     /**
      * 支付结果：0—成功；其它—失败
      */
-    @XmlElement(name = "pay_result")
-    private Integer payResult;
+    private Integer pay_result;
 
     /**
      * 支付结果信息,支付成功时为空
      */
-    @XmlElement(name = "pay_info")
     private String pay_info;
 
     /**
      * 平台交易号
      */
-    @XmlElement(name = "transaction_id")
-    private String transactionId;
+    private String transaction_id;
 
     /**
      * 第三方订单号
      */
-    @XmlElement(name = "out_transaction_id")
-    private String outTransactionId;
+    private String out_transaction_id;
 
     /**
      * 用户是否关注子公众账号，Y-关注，N-未关注，仅在公众账号类型支付有效
      */
-    @XmlElement(name="sub_is_subscribe")
-    private String subIsSubscribe;
+    private String sub_is_subscribe;
 
     /**
      * 子商户appid
      */
-    @XmlElement(name="sub_appid")
-    private String subAppid;
+    private String sub_appid;
 
     /**
      * 用户openid:用户在商户 sub_appid 下的唯一标识
      */
-    @XmlElement(name="sub_openid")
-    private String subOpenid;
+    private String sub_openid;
 
     /**
      * 商户订单号:商户系统内部的定单号
      */
-    @XmlElement(name = "out_trade_no")
-    private String outTradeNo;
+    private String out_trade_no;
 
     /**
      * 总金额，以分为单位，不允许包含任何字、符号
      */
-    @XmlElement(name = "total_fee")
-    private Integer totalFee;
+    private Integer total_fee;
 
     /**
      * 现金券支付金额<=订单总金额， 订单总金额-现金券金额为现金支付金额
      */
-    @XmlElement(name = "coupon_fee")
-    private Integer couponFee;
+    private Integer coupon_fee;
 
     /**
      * 货币类型，符合 ISO 4217 标准的三位字母代码，默认人民币：CNY
      */
-    @XmlElement(name = "fee_type")
-    private String feeType;
+    private String fee_type;
 
     /**
      * 附加信息:商家数据包，原样返回
      */
-    @XmlElement(name = "attach")
     private String attach;
 
     /**
      * 付款银行
      */
-    @XmlElement(name = "bank_type")
-    private String bankType;
+    private String bank_type;
 
     /**
      * 银行订单号
      */
-    @XmlElement(name = "bank_billno")
     private String bank_billno;
 
     /**
      * time_end
      */
-    @XmlElement(name = "time_end")
-    private String timeEnd;
+    private String time_end;
 
     public String getVersion() {
         return version;
@@ -247,12 +211,12 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
         this.charset = charset;
     }
 
-    public String getSignType() {
-        return signType;
+    public String getSign_type() {
+        return sign_type;
     }
 
-    public void setSignType(String signType) {
-        this.signType = signType;
+    public void setSign_type(String sign_type) {
+        this.sign_type = sign_type;
     }
 
     public String getStatus() {
@@ -271,52 +235,52 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
         this.message = message;
     }
 
-    public String getResultCode() {
-        return resultCode;
+    public String getResult_code() {
+        return result_code;
     }
 
-    public void setResultCode(String resultCode) {
-        this.resultCode = resultCode;
+    public void setResult_code(String result_code) {
+        this.result_code = result_code;
     }
 
-    public String getMchId() {
-        return mchId;
+    public String getMch_id() {
+        return mch_id;
     }
 
-    public void setMchId(String mchId) {
-        this.mchId = mchId;
+    public void setMch_id(String mch_id) {
+        this.mch_id = mch_id;
     }
 
-    public String getDeviceInfo() {
-        return deviceInfo;
+    public String getDevice_info() {
+        return device_info;
     }
 
-    public void setDeviceInfo(String deviceInfo) {
-        this.deviceInfo = deviceInfo;
+    public void setDevice_info(String device_info) {
+        this.device_info = device_info;
     }
 
-    public String getNonceStr() {
-        return nonceStr;
+    public String getNonce_str() {
+        return nonce_str;
     }
 
-    public void setNonceStr(String nonceStr) {
-        this.nonceStr = nonceStr;
+    public void setNonce_str(String nonce_str) {
+        this.nonce_str = nonce_str;
     }
 
-    public String getErrCode() {
-        return errCode;
+    public String getErr_code() {
+        return err_code;
     }
 
-    public void setErrCode(String errCode) {
-        this.errCode = errCode;
+    public void setErr_code(String err_code) {
+        this.err_code = err_code;
     }
 
-    public String getErrMsg() {
-        return errMsg;
+    public String getErr_msg() {
+        return err_msg;
     }
 
-    public void setErrMsg(String errMsg) {
-        this.errMsg = errMsg;
+    public void setErr_msg(String err_msg) {
+        this.err_msg = err_msg;
     }
 
     public String getSign() {
@@ -335,28 +299,28 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
         this.openid = openid;
     }
 
-    public String getTradeType() {
-        return tradeType;
+    public String getTrade_type() {
+        return trade_type;
     }
 
-    public void setTradeType(String tradeType) {
-        this.tradeType = tradeType;
+    public void setTrade_type(String trade_type) {
+        this.trade_type = trade_type;
     }
 
-    public String getIsSubscribe() {
-        return isSubscribe;
+    public String getIs_subscribe() {
+        return is_subscribe;
     }
 
-    public void setIsSubscribe(String isSubscribe) {
-        this.isSubscribe = isSubscribe;
+    public void setIs_subscribe(String is_subscribe) {
+        this.is_subscribe = is_subscribe;
     }
 
-    public Integer getPayResult() {
-        return payResult;
+    public Integer getPay_result() {
+        return pay_result;
     }
 
-    public void setPayResult(Integer payResult) {
-        this.payResult = payResult;
+    public void setPay_result(Integer pay_result) {
+        this.pay_result = pay_result;
     }
 
     public String getPay_info() {
@@ -367,76 +331,76 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
         this.pay_info = pay_info;
     }
 
-    public String getTransactionId() {
-        return transactionId;
+    public String getTransaction_id() {
+        return transaction_id;
     }
 
-    public void setTransactionId(String transactionId) {
-        this.transactionId = transactionId;
+    public void setTransaction_id(String transaction_id) {
+        this.transaction_id = transaction_id;
     }
 
-    public String getOutTransactionId() {
-        return outTransactionId;
+    public String getOut_transaction_id() {
+        return out_transaction_id;
     }
 
-    public void setOutTransactionId(String outTransactionId) {
-        this.outTransactionId = outTransactionId;
+    public void setOut_transaction_id(String out_transaction_id) {
+        this.out_transaction_id = out_transaction_id;
     }
 
-    public String getSubIsSubscribe() {
-        return subIsSubscribe;
+    public String getSub_is_subscribe() {
+        return sub_is_subscribe;
     }
 
-    public void setSubIsSubscribe(String subIsSubscribe) {
-        this.subIsSubscribe = subIsSubscribe;
+    public void setSub_is_subscribe(String sub_is_subscribe) {
+        this.sub_is_subscribe = sub_is_subscribe;
     }
 
-    public String getSubAppid() {
-        return subAppid;
+    public String getSub_appid() {
+        return sub_appid;
     }
 
-    public void setSubAppid(String subAppid) {
-        this.subAppid = subAppid;
+    public void setSub_appid(String sub_appid) {
+        this.sub_appid = sub_appid;
     }
 
-    public String getSubOpenid() {
-        return subOpenid;
+    public String getSub_openid() {
+        return sub_openid;
     }
 
-    public void setSubOpenid(String subOpenid) {
-        this.subOpenid = subOpenid;
+    public void setSub_openid(String sub_openid) {
+        this.sub_openid = sub_openid;
     }
 
-    public String getOutTradeNo() {
-        return outTradeNo;
+    public String getOut_trade_no() {
+        return out_trade_no;
     }
 
-    public void setOutTradeNo(String outTradeNo) {
-        this.outTradeNo = outTradeNo;
+    public void setOut_trade_no(String out_trade_no) {
+        this.out_trade_no = out_trade_no;
     }
 
-    public Integer getTotalFee() {
-        return totalFee;
+    public Integer getTotal_fee() {
+        return total_fee;
     }
 
-    public void setTotalFee(Integer totalFee) {
-        this.totalFee = totalFee;
+    public void setTotal_fee(Integer total_fee) {
+        this.total_fee = total_fee;
     }
 
-    public Integer getCouponFee() {
-        return couponFee;
+    public Integer getCoupon_fee() {
+        return coupon_fee;
     }
 
-    public void setCouponFee(Integer couponFee) {
-        this.couponFee = couponFee;
+    public void setCoupon_fee(Integer coupon_fee) {
+        this.coupon_fee = coupon_fee;
     }
 
-    public String getFeeType() {
-        return feeType;
+    public String getFee_type() {
+        return fee_type;
     }
 
-    public void setFeeType(String feeType) {
-        this.feeType = feeType;
+    public void setFee_type(String fee_type) {
+        this.fee_type = fee_type;
     }
 
     public String getAttach() {
@@ -447,12 +411,12 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
         this.attach = attach;
     }
 
-    public String getBankType() {
-        return bankType;
+    public String getBank_type() {
+        return bank_type;
     }
 
-    public void setBankType(String bankType) {
-        this.bankType = bankType;
+    public void setBank_type(String bank_type) {
+        this.bank_type = bank_type;
     }
 
     public String getBank_billno() {
@@ -463,12 +427,12 @@ public class SwiftpassCallbackRequestBody implements Serializable /*implements S
         this.bank_billno = bank_billno;
     }
 
-    public String getTimeEnd() {
-        return timeEnd;
+    public String getTime_end() {
+        return time_end;
     }
 
-    public void setTimeEnd(String timeEnd) {
-        this.timeEnd = timeEnd;
+    public void setTime_end(String time_end) {
+        this.time_end = time_end;
     }
 
     public String toString(){
