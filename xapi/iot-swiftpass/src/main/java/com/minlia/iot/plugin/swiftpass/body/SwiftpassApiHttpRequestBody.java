@@ -30,6 +30,11 @@ public class SwiftpassApiHttpRequestBody extends ApiHttpRequestBody {
   private String mchId;
 
   /**
+   * 商户密钥
+   */
+  private String mchSecret;
+
+  /**
    * 版本号	version	否	String(8)	版本号，version默认值是2.0
    */
   @XmlElement(name = "version")

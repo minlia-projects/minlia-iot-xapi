@@ -11,6 +11,7 @@ import com.minlia.iot.signature.SignatureAlgorithmic;
 import com.minlia.iot.signature.binder.SignatureBinder;
 import com.minlia.iot.signature.sign.DefaultXmlSignatureProcessor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Created by will on 9/11/17.
@@ -32,9 +33,11 @@ public class SwiftpassSignatureProcessor<REQUEST extends SwiftpassApiHttpRequest
     signatureBody.setDelimiter("&");
     signatureBody.setCharset(DEFAULT_CHARSET);
 
-    signatureBody.setSalt(
-        ((SwiftpassApiCredentialConfiguration) context.getPreferApiCredentialConfiguration())
-            .getKey());
+    if (StringUtils.isNotEmpty(requestBody.getMchSecret())) {
+      signatureBody.setSalt(requestBody.getMchSecret());
+    } else {
+      signatureBody.setSalt(((SwiftpassApiCredentialConfiguration) context.getPreferApiCredentialConfiguration()).getKey());
+    }
 
     SignatureBinder.bind(signatureBody);
 
