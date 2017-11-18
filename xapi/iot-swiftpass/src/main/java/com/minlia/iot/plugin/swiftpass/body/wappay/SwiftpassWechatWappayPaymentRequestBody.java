@@ -105,6 +105,9 @@ public class SwiftpassWechatWappayPaymentRequestBody extends SwiftpassApiHttpReq
     @JsonProperty(value = "mch_app_name")
     private String mchAppName;
 
+    /**
+     * 如果是用于苹果或安卓app应用中，苹果传IOS 应用唯一标识(如：com.tencent.wzryIOS)安卓传包名(如：com.tencent.tmgp.sgame)如果是用于手机网站，传网站首页URL地址,必须保证公网能正常访问(如：https://m.jd.com)
+     */
     @XmlElement(name = "mch_app_id",required = true)
     @JsonProperty(value = "mch_app_id")
     private String mchAppId;
