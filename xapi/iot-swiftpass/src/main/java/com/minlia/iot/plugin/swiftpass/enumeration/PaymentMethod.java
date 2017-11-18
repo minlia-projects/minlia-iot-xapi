@@ -7,6 +7,6 @@ public enum PaymentMethod {
 
     JS_PAY,
 
-    WAY_PAY
+    WAP_PAY
 
 }
