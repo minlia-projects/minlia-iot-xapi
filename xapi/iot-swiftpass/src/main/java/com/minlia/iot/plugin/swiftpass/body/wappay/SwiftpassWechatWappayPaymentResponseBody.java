@@ -43,4 +43,8 @@ public class SwiftpassWechatWappayPaymentResponseBody extends SwiftpassApiHttpRe
 
     @XmlElement(name = "pay_info")
     private String payInfo;
+
+    public Boolean isSuccess() {
+        return "0".equals(resultCode);
+    }
 }
