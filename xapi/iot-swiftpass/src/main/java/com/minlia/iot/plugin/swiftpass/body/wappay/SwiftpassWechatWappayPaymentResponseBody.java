@@ -3,12 +3,14 @@ package com.minlia.iot.plugin.swiftpass.body.wappay;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.minlia.iot.plugin.swiftpass.body.SwiftpassApiHttpResponseBody;
+import lombok.Data;
 
 import javax.xml.bind.annotation.XmlElement;
 
 /**
  * Created by 498391498 on 2017/11/18.
  */
+@Data
 public class SwiftpassWechatWappayPaymentResponseBody extends SwiftpassApiHttpResponseBody {
 
     @JsonProperty(value = "appid")

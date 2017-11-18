@@ -13,10 +13,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Data
 public class SwiftpassWechatJspayPaymentResponseBody extends SwiftpassApiHttpResponseBody {
 
-  @JsonProperty(value = "resultCode")
-  @XmlElement(name = "result_code")
-  private String resultCode;
-
   @JsonProperty(value = "appid")
   @XmlElement(name = "appid")
   private String appid;
@@ -24,6 +20,10 @@ public class SwiftpassWechatJspayPaymentResponseBody extends SwiftpassApiHttpRes
   @JsonProperty(value = "mchId")
   @XmlElement(name = "mch_id")
   private String mchId;
+
+  @JsonProperty(value = "resultCode")
+  @XmlElement(name = "result_code")
+  private String resultCode;
 
   @JsonProperty(value = "nonceStr")
   @XmlElement(name = "nonce_str")
