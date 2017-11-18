@@ -38,4 +38,7 @@ public class SwiftpassWechatWappayPaymentResponseBody extends SwiftpassApiHttpRe
     @JsonProperty(value = "sign")
     @XmlElement(name = "sign")
     private String sign;
+
+    @XmlElement(name = "pay_info")
+    private String payInfo;
 }
