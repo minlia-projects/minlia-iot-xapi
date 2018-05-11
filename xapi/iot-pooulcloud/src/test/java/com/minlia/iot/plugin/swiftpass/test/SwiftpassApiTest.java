@@ -54,6 +54,11 @@ public class SwiftpassApiTest extends SwiftpassAbstractTest {
 
     //body=测试支付&charset=UTF-8&mch_id=8444812501217143&nonce_str=qXSWWJdIbuCOPGdyKXvlvNbcVKZLxj&out_trade_no=MINLIA-TEST-ORDER-5359822683&payType=wechat.jsapi&sign_type=MD5&total_fee=1&version=2.0&key=7B8CC56D58F81D7DACCE67C4D6C90E4D
 
+
+    //把pay_info中的appId 替换为wx469ffdb81de47e4d，然后用这个密钥  6Uc2ACa4EpRuZe86fetUsPEcuspUWUcr 重新计算 paySign
+//{"code":0,"msg":"OK","data":{"appid":"wx26a0ffd6bfa99df7","sub_appid":"wx469ffdb81de47e4d","prepay_id":"wx120044241533465455a935262325943199","pay_info":"{\"appId\":\"wx26a0ffd6bfa99df7\",\"timeStamp\":\"1526057064\",\"nonceStr\":\"7KhCt1kO5Zjk8Wsv\",\"package\":\"prepay_id=wx120044241533465455a935262325943199\",\"signType\":\"MD5\",\"paySign\":\"DA4231910BCD7759AB93441CE2762823\"}","trade_id":"5af5c867fd4eb06e46c3261a","mch_trade_id":"MINLIA-TEST-ORDER-7757040984","merchant_id":"2302209837595143","pay_type":"wechat.jsapi","nonce_str":"5af5c868fd4eb06e46c3261d"},"version":"1.0","sign_type":"md5","sign":"FBD2226215C9F6F0A3C1C31D63D3EE38"}
+
+
     SwiftpassWechatJspayPaymentRequestBody requestBody = new SwiftpassWechatJspayPaymentRequestBody();
 //    requestBody.setAuthCode("134967598248771757");
 //    requestBody.setSpbillCreateIp("127.0.0.1");
