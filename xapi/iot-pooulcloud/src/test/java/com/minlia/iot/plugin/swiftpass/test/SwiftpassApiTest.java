@@ -58,8 +58,8 @@ public class SwiftpassApiTest extends SwiftpassAbstractTest {
 //    requestBody.setAuthCode("134967598248771757");
 //    requestBody.setSpbillCreateIp("127.0.0.1");
     requestBody.setSubAppid("wx469ffdb81de47e4d");
-    requestBody.setSubOpenid("oZtcE0aIoRluOZ4XbfdHZFB6zG");
-    requestBody.setOpenid("oZtcE0aIoRluOZ4XbfdHZFB6zG");
+    requestBody.setSubOpenid("oerQA5Q2JoI532RVadsbnsc5sUo8");
+//    requestBody.setOpenid("oZtcE0aIoRluOZ4XbfdHZFB6zG");
     requestBody.setMchTradeId("MINLIA-TEST-ORDER-" + RandomStringUtils.randomNumeric(10));//
     requestBody.setTotalFee("1");
     requestBody.setBody("测试支付");
