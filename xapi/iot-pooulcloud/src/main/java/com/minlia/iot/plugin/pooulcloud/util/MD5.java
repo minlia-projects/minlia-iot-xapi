@@ -1,4 +1,4 @@
-package com.minlia.iot.plugin.swiftpass.util;
+package com.minlia.iot.plugin.pooulcloud.util;
 
 import org.apache.commons.codec.digest.DigestUtils;
 

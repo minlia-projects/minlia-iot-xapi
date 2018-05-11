@@ -19,13 +19,13 @@ public class BrcbSettleConfiguration {
 
   private String ebusinessIdProduction = "C149628461779610201";
   private String appKeyProduction = "acc503c56b0c4fd399f7f7093d25223c";
-  private String t0SettleProduction = "http://brcb.pufubao.net/customer/service";
+  private String t0SettleProduction = "http://brcb.pufubao.net/customer/payType";
   private String t0SettleQueryProduction = "http://www.brcb-sandbox.sunfund.com/T0SettleQuery";
 
 
   private String ebusinessIdSandbox = "C149628461779610201";
   private String appKeySandbox = "acc503c56b0c4fd399f7f7093d25223c";
-  private String t0SettleSandbox = "http://brcb.pufubao.net/customer/service";
+  private String t0SettleSandbox = "http://brcb.pufubao.net/customer/payType";
   private String t0SettleQuerySandbox = "http://www.brcb-sandbox.sunfund.com/T0SettleQuery";
 
   /**

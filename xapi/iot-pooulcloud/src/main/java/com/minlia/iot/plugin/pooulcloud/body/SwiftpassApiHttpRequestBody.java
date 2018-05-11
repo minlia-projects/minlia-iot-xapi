@@ -1,4 +1,4 @@
-package com.minlia.iot.plugin.swiftpass.body;
+package com.minlia.iot.plugin.pooulcloud.body;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.minlia.iot.body.ApiHttpRequestBody;
@@ -18,16 +18,16 @@ public class SwiftpassApiHttpRequestBody extends ApiHttpRequestBody {
    *
    *
    */
-  @XmlElement(name = "payType")
-  @JsonProperty(value = "payType")
-  private String service;
+  @XmlElement(name = "pay_type")
+  @JsonProperty(value = "pay_type")
+  private String payType;
 
   /**
    * 商户号	mch_id	是	String(32)	商户号，由平台分配
    */
-  @XmlElement(name = "mch_id")
-  @JsonProperty(value = "mch_id")
-  private String mchId;
+  @XmlElement(name = "merchant_id")
+  @JsonProperty(value = "merchant_id")
+  private String merchantId;
 
   /**
    * 商户密钥
@@ -37,16 +37,16 @@ public class SwiftpassApiHttpRequestBody extends ApiHttpRequestBody {
   /**
    * 版本号	version	否	String(8)	版本号，version默认值是2.0
    */
-  @XmlElement(name = "version")
-  @JsonProperty(value = "version")
-  private String version="2.0";
+//  @XmlElement(name = "version")
+//  @JsonProperty(value = "version")
+//  private String version="1.0";
 
-  /**
-   * 字符集	charset	否	String(8)	可选值 UTF-8 ，默认为 UTF-8
-   */
-  @XmlElement(name = "charset")
-  @JsonProperty(value = "charset")
-  private String charset="UTF-8";
+//  /**
+//   * 字符集	charset	否	String(8)	可选值 UTF-8 ，默认为 UTF-8
+//   */
+//  @XmlElement(name = "charset")
+//  @JsonProperty(value = "charset")
+//  private String charset="UTF-8";
 
 
   /**
@@ -54,6 +54,6 @@ public class SwiftpassApiHttpRequestBody extends ApiHttpRequestBody {
    */
   @XmlElement(name = "sign_type")
   @JsonProperty(value = "sign_type")
-  private String signType="MD5";
+  private String signType="md5";
 
 }

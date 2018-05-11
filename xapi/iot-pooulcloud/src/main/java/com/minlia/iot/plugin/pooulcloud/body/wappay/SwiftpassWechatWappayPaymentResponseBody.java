@@ -1,8 +1,7 @@
-package com.minlia.iot.plugin.swiftpass.body.wappay;
+package com.minlia.iot.plugin.pooulcloud.body.wappay;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.minlia.iot.plugin.swiftpass.body.SwiftpassApiHttpResponseBody;
+import com.minlia.iot.plugin.pooulcloud.body.SwiftpassApiHttpResponseBody;
 import lombok.Data;
 
 import javax.xml.bind.annotation.XmlElement;
