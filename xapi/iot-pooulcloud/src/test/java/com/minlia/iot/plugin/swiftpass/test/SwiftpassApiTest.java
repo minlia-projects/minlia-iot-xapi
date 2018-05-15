@@ -109,6 +109,11 @@ public class SwiftpassApiTest extends SwiftpassAbstractTest {
 //    String appid = apiHttpResponseBody.getAppid();
 //    assertEquals("wx8632a91376b81e24", apiHttpResponseBody.getAppid());
 
+
+
+    //把pay_info中的appId 替换为wx469ffdb81de47e4d，然后用这个密钥  6Uc2ACa4EpRuZe86fetUsPEcuspUWUcr 重新计算 paySign
+    //你相当于多做一步，把pay_info的信息调整一下
+    //你调了以后可以用微信的工具校验一下https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=20_1
   }
 
   @Test
