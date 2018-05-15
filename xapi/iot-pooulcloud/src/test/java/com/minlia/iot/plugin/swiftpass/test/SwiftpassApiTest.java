@@ -39,7 +39,7 @@ public class SwiftpassApiTest extends SwiftpassAbstractTest {
     assertNotNull(statefulApiResponseBody);
     assertTrue(statefulApiResponseBody.isSuccess());
 
-    assertEquals("0", statefulApiResponseBody.getStatus());
+    assertEquals("0", statefulApiResponseBody.getCode());
 
     SwiftpassWechatMicropayResponseBody apiHttpResponseBody = (SwiftpassWechatMicropayResponseBody) statefulApiResponseBody
         .getPayload();
@@ -57,6 +57,30 @@ public class SwiftpassApiTest extends SwiftpassAbstractTest {
 
     //把pay_info中的appId 替换为wx469ffdb81de47e4d，然后用这个密钥  6Uc2ACa4EpRuZe86fetUsPEcuspUWUcr 重新计算 paySign
 //{"code":0,"msg":"OK","data":{"appid":"wx26a0ffd6bfa99df7","sub_appid":"wx469ffdb81de47e4d","prepay_id":"wx120044241533465455a935262325943199","pay_info":"{\"appId\":\"wx26a0ffd6bfa99df7\",\"timeStamp\":\"1526057064\",\"nonceStr\":\"7KhCt1kO5Zjk8Wsv\",\"package\":\"prepay_id=wx120044241533465455a935262325943199\",\"signType\":\"MD5\",\"paySign\":\"DA4231910BCD7759AB93441CE2762823\"}","trade_id":"5af5c867fd4eb06e46c3261a","mch_trade_id":"MINLIA-TEST-ORDER-7757040984","merchant_id":"2302209837595143","pay_type":"wechat.jsapi","nonce_str":"5af5c868fd4eb06e46c3261d"},"version":"1.0","sign_type":"md5","sign":"FBD2226215C9F6F0A3C1C31D63D3EE38"}
+
+
+//      {
+
+
+//        "data": {
+//           "appid": "wx26a0ffd6bfa99df7",
+//          "sub_appid": "wx469ffdb81de47e4d",
+//          "prepay_id": "wx1521101398908548b7cbf75f1090559034",
+//          "pay_info": "{\"appId\":\"wx26a0ffd6bfa99df7\",\"timeStamp\":\"1526389814\",\"nonceStr\":\"rjtdjUjLck1lh9tW\",\"package\":\"prepay_id=wx1521101398908548b7cbf75f1090559034\",\"signType\":\"MD5\",\"paySign\":\"440537728C4050F5D123EE99D8F9C792\"}",
+//          "trade_id": "5afadc35fd4eb06e4bc17029",
+//          "mch_trade_id": "MINLIA-TEST-ORDER-2307894603",
+//          "merchant_id": "2302209837595143",
+//          "pay_type": "wechat.jsapi",
+//          "nonce_str": "5afadc36fd4eb06e4bc1702c"
+//        },
+
+//        "code": 0,
+//        "msg": "OK",
+
+//        "version": "1.0",
+//        "sign_type": "md5",
+//        "sign": "61FB43E7B08FAD57A67DD1C8688E2050"
+//  }
 
 
     SwiftpassWechatJspayPaymentRequestBody requestBody = new SwiftpassWechatJspayPaymentRequestBody();
@@ -77,7 +101,7 @@ public class SwiftpassApiTest extends SwiftpassAbstractTest {
     assertNotNull(statefulApiResponseBody);
     assertTrue(statefulApiResponseBody.isSuccess());
 
-    assertEquals("0", statefulApiResponseBody.getStatus());
+    assertEquals("0", statefulApiResponseBody.getCode());
 
     SwiftpassWechatJspayPaymentResponseBody apiHttpResponseBody = (SwiftpassWechatJspayPaymentResponseBody) statefulApiResponseBody
         .getPayload();
@@ -105,7 +129,7 @@ public class SwiftpassApiTest extends SwiftpassAbstractTest {
     assertNotNull(statefulApiResponseBody);
     assertTrue(statefulApiResponseBody.isSuccess());
 
-    assertEquals("0", statefulApiResponseBody.getStatus());
+    assertEquals("0", statefulApiResponseBody.getCode());
 
     SwiftpassWechatNativePaymentResponseBody apiHttpResponseBody = (SwiftpassWechatNativePaymentResponseBody) statefulApiResponseBody
         .getPayload();
@@ -132,7 +156,7 @@ public class SwiftpassApiTest extends SwiftpassAbstractTest {
 
     assertNotNull(statefulApiResponseBody);
     assertTrue(statefulApiResponseBody.isSuccess());
-    assertEquals("0", statefulApiResponseBody.getStatus());
+    assertEquals("0", statefulApiResponseBody.getCode());
     SwiftpassWechatNativePaymentResponseBody apiHttpResponseBody = (SwiftpassWechatNativePaymentResponseBody) statefulApiResponseBody
         .getPayload();
     assertEquals("Order paid", apiHttpResponseBody.getErrCode());
