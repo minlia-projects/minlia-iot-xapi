@@ -94,5 +94,4 @@ public class SwiftpassWechatJspayPaymentResponseBody extends SwiftpassApiHttpRes
   private String paySign;
 
 
-  private String output;
 }
