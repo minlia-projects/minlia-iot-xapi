@@ -92,12 +92,22 @@ public class PooulcloudApiTest extends SwiftpassAbstractTest {
     String newSign = apiHttpResponseBody.getPaySign();
 
     log.debug("最终需要的值");
-    log.debug("appId: {}", apiHttpResponseBody.getAppId());
-    log.debug("package: {}", pkg);
-    log.debug("timeStamp: {}", apiHttpResponseBody.getTimeStamp());
-    log.debug("nonceStr: {}", apiHttpResponseBody.getNonceStr());
-    log.debug("signType: {}", apiHttpResponseBody.getSignType());
-    log.debug("paySign: {}", newSign);
+    System.out.println("appId:" +apiHttpResponseBody.getAppId());
+    System.out.println("package:" +pkg);
+    System.out.println("timeStamp:" +apiHttpResponseBody.getTimeStamp());
+    System.out.println("nonceStr:" +apiHttpResponseBody.getNonceStr());
+    System.out.println("signType:" +apiHttpResponseBody.getSignType());
+    System.out.println("paySign:" +newSign);
+
+
+    //appid=wx469ffdb81de47e4d&nonceStr=wEblzLm9QBa33INB&package=prepay_id=wx16113952973414641c16d10e2510352351&signType=MD5&timeStamp=1526441993&key=6Uc2ACa4EpRuZe86fetUsPEcuspUWUcr
+    //appid=wx469ffdb81de47e4d&nonceStr=wEblzLm9QBa33INB&package=prepay_id=wx16113952973414641c16d10e2510352351&timeStamp=1526441993&key=6Uc2ACa4EpRuZe86fetUsPEcuspUWUcr
+
+
+
+    //appid=wx469ffdb81de47e4d&nonceStr=QTbsEmzyF7Jovf6K&package=prepay_id=wx161148028723301bdce6a9222808321886&signType=MD5&timeStamp=1526442482&key=6Uc2ACa4EpRuZe86fetUsPEcuspUWUcr
+
+
 
 //    swiftpassSignatureProcessor.sign(swiftpassApiHttpRequestBody);
     //拿这个去重新计算paySign
