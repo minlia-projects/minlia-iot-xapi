@@ -110,7 +110,7 @@ public class PooulcloudApiTest extends SwiftpassAbstractTest {
 //    调用wx.requestPayment(OBJECT)发起微信支付
 
     //appId=wx469ffdb81de47e4d&nonceStr=2inpmFosQuK3wz2B&package=prepay_id=wx16084952697184a4f3301c643387929693&timeStamp=1526431792&key=6Uc2ACa4EpRuZe86fetUsPEcuspUWUcr
-    //signature=DC0B4DC1268A65C5566E49017CBB95AA
+    //paySign=DC0B4DC1268A65C5566E49017CBB95AA
 
 
   }
