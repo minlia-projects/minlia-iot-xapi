@@ -92,6 +92,7 @@ public class PooulcloudApiTest extends SwiftpassAbstractTest {
     String newSign = apiHttpResponseBody.getPaySign();
 
     log.debug("最终需要的值");
+    log.debug("appId: {}", apiHttpResponseBody.getAppId());
     log.debug("package: {}", pkg);
     log.debug("timeStamp: {}", apiHttpResponseBody.getTimeStamp());
     log.debug("nonceStr: {}", apiHttpResponseBody.getNonceStr());
