@@ -73,6 +73,10 @@ public class PooulcloudApiTest extends SwiftpassAbstractTest {
     SwiftpassWechatJspayPaymentResponseBody apiHttpResponseBody = (SwiftpassWechatJspayPaymentResponseBody) statefulApiResponseBody
         .getPayload();
 
+
+    //把pay_info中的appId 替换为wx469ffdb81de47e4d，然后用这个密钥  6Uc2ACa4EpRuZe86fetUsPEcuspUWUcr 重新计算 paySign
+    //你相当于多做一步，把pay_info的信息调整一下
+    //你调了以后可以用微信的工具校验一下https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=20_1
     apiHttpResponseBody.setAppId("wx469ffdb81de47e4d");
     SignatureBody signatureBody = new SignatureBody();
     signatureBody.setSalt("6Uc2ACa4EpRuZe86fetUsPEcuspUWUcr");
@@ -91,7 +95,7 @@ public class PooulcloudApiTest extends SwiftpassAbstractTest {
     log.debug("package: {}", pkg);
     log.debug("timeStamp: {}", apiHttpResponseBody.getTimeStamp());
     log.debug("nonceStr: {}", apiHttpResponseBody.getNonceStr());
-    log.debug("signType: {}", "MD5");
+    log.debug("signType: {}", apiHttpResponseBody.getSignType());
     log.debug("paySign: {}", newSign);
 
 //    swiftpassSignatureProcessor.sign(swiftpassApiHttpRequestBody);
@@ -108,9 +112,6 @@ public class PooulcloudApiTest extends SwiftpassAbstractTest {
     //appId=wx469ffdb81de47e4d&nonceStr=2inpmFosQuK3wz2B&package=prepay_id=wx16084952697184a4f3301c643387929693&timeStamp=1526431792&key=6Uc2ACa4EpRuZe86fetUsPEcuspUWUcr
     //signature=DC0B4DC1268A65C5566E49017CBB95AA
 
-    //把pay_info中的appId 替换为wx469ffdb81de47e4d，然后用这个密钥  6Uc2ACa4EpRuZe86fetUsPEcuspUWUcr 重新计算 paySign
-    //你相当于多做一步，把pay_info的信息调整一下
-    //你调了以后可以用微信的工具校验一下https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=20_1
 
   }
 
