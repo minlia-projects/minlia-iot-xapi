@@ -12,6 +12,7 @@ import com.minlia.iot.plugin.pooulcloud.body.jspay.SwiftpassWechatJspayPaymentRe
 import com.minlia.iot.plugin.pooulcloud.body.micropay.SwiftpassWechatMicropayRequestBody;
 import com.minlia.iot.plugin.pooulcloud.body.micropay.SwiftpassWechatMicropayResponseBody;
 import com.minlia.iot.plugin.pooulcloud.body.wappay.SwiftpassWechatWappayPaymentResponseBody;
+import com.minlia.iot.plugin.pooulcloud.marshal.PooulcloudDeserializer;
 import com.minlia.iot.plugin.pooulcloud.requestor.SwiftpassDefaultApiHttpRequestor;
 import com.minlia.iot.plugin.pooulcloud.signature.SwiftpassSignatureProcessor;
 import com.minlia.iot.plugin.pooulcloud.body.jspay.SwiftpassWechatJspayPaymentResponseBody;
@@ -63,6 +64,7 @@ public class SwiftpassApi extends AbstractJsonApi {
     public SwiftpassStatefulApiResponseBody<SwiftpassWechatJspayPaymentResponseBody> wechatJspay(SwiftpassWechatJspayPaymentRequestBody body) {
         //必须与ApiEndpointConfiguration中的配置项保持一至,不然会出现找不到此项的错误
         apiRuntimeContext.setApiScope(SwiftpassApiScope.ENDPOINT.name());
+        apiRuntimeContext.setApiDeserializer(new PooulcloudDeserializer());
         body.setPayType("wechat.jsapi");
         apiRuntimeContext.setBusinessResponseBodyClass(SwiftpassWechatJspayPaymentResponseBody.class);
         ApiProcessor processor = new DefaultApiProcessor(apiRuntimeContext);

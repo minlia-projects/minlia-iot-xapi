@@ -47,7 +47,9 @@ public class SwiftpassStatefulApiResponseBody<RESPONSE extends SwiftpassApiHttpR
   @XmlElement(name = "msg")
   private String message;
 
-
+  @JsonProperty(value = "sign")
+  @XmlElement(name = "sign")
+  private String sign;
 
   @ApiRequestEntity
   private RESPONSE payload;

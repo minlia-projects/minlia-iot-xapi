@@ -1,6 +1,7 @@
 package com.minlia.iot.plugin.pooulcloud.body.jspay;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.minlia.iot.annotation.Signature;
 import com.minlia.iot.plugin.pooulcloud.body.SwiftpassApiHttpResponseBody;
 import lombok.Data;
 
@@ -10,6 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
  * Created by will on 9/10/17.
  */
 @Data
+@Signature(value = "paySign")
 public class SwiftpassWechatJspayPaymentResponseBody extends SwiftpassApiHttpResponseBody {
 
 
@@ -27,44 +29,67 @@ public class SwiftpassWechatJspayPaymentResponseBody extends SwiftpassApiHttpRes
 //          "nonce_str": "5afadc36fd4eb06e4bc1702c"
 //        },
 
-  @JsonProperty(value = "appid")
-  @XmlElement(name = "appid")
-  private String appid;
+//  @JsonProperty(value = "appid")
+//  @XmlElement(name = "appid")
+//  private String appid;
+//
+//  @JsonProperty(value = "sub_appid")
+//  @XmlElement(name = "sub_appid")
+//  private String sub_appid;
+//
+//  @JsonProperty(value = "prepay_id")
+//  @XmlElement(name = "prepay_id")
+//  private String prepay_id;
+//
+//  @JsonProperty(value = "nonce_str")
+//  @XmlElement(name = "nonce_str")
+//  private String nonceStr;
+//
+//
+//
+//  @JsonProperty(value = "pay_info")
+//  @XmlElement(name = "pay_info")
+//  private String pay_info;
+//
+//  @JsonProperty(value = "trade_id")
+//  @XmlElement(name = "trade_id")
+//  private String trade_id;
+//
+//  @JsonProperty(value = "mch_trade_id")
+//  @XmlElement(name = "mch_trade_id")
+//  private String mch_trade_id;
+//
+//  @JsonProperty(value = "merchant_id")
+//  @XmlElement(name = "merchant_id")
+//  private String merchant_id;
+//
+//  @JsonProperty(value = "pay_type")
+//  @XmlElement(name = "pay_type")
+//  private String pay_type;
 
-  @JsonProperty(value = "sub_appid")
-  @XmlElement(name = "sub_appid")
-  private String sub_appid;
 
-  @JsonProperty(value = "prepay_id")
-  @XmlElement(name = "prepay_id")
-  private String prepay_id;
 
+  //这些才是有用的， 上面这些不用了
+  //  {"appId":"wx26a0ffd6bfa99df7","timeStamp":"1526429363","nonceStr":"hXJ2e3dQZm8qwZlc","package":"prepay_id=wx1608092325202618ae9afa6d0781719733","signType":"MD5","paySign":"94095737486E1394D9534599B7A978D5"}
+  @XmlElement(name = "appId")
+  @JsonProperty(value = "appId")
+  private String appId;
+
+  @XmlElement(name = "timeStamp")
+  @JsonProperty(value = "timeStamp")
+  private String timeStamp;
+
+  @XmlElement(name = "nonceStr")
   @JsonProperty(value = "nonceStr")
-  @XmlElement(name = "nonce_str")
   private String nonceStr;
 
-  @JsonProperty(value = "sign")
-  @XmlElement(name = "sign")
-  private String sign;
+  @XmlElement(name = "package")
+  @JsonProperty(value = "package")
+  private String pkg;
 
-  @JsonProperty(value = "pay_info")
-  @XmlElement(name = "pay_info")
-  private String pay_info;
+  private String signType;
+  private String paySign;
 
-  @JsonProperty(value = "trade_id")
-  @XmlElement(name = "trade_id")
-  private String trade_id;
 
-  @JsonProperty(value = "mch_trade_id")
-  @XmlElement(name = "mch_trade_id")
-  private String mch_trade_id;
-
-  @JsonProperty(value = "merchant_id")
-  @XmlElement(name = "merchant_id")
-  private String merchant_id;
-
-  @JsonProperty(value = "pay_type")
-  @XmlElement(name = "pay_type")
-  private String pay_type;
-
+  private String output;
 }

@@ -32,7 +32,7 @@ public class SwiftpassSignatureProcessor<REQUEST extends SwiftpassApiHttpRequest
     signatureBody.setCharset(context.getEncoding());
     signatureBody.setSaltParameterPrefix("key=");
     signatureBody.setDelimiter("&");
-    signatureBody.setCharset(DEFAULT_CHARSET);
+//    signatureBody.setCharset(DEFAULT_CHARSET);
 
     if (StringUtils.isNotEmpty(requestBody.getMchSecret())) {
       signatureBody.setSalt(requestBody.getMchSecret());
