@@ -1,47 +1,38 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+      <dependency>
+        <groupId>commons-beanutils</groupId>
+        <artifactId>commons-beanutils</artifactId>
+        <version>1.9.3</version>
+      </dependency>
+    </dependencies>
 
   <parent>
     <groupId>com.minlia.iot</groupId>
-    <artifactId>minlia-iot-xapi-parent</artifactId>
+    <artifactId>minlia-iot-xapi</artifactId>
     <version>1.0.6-SNAPSHOT</version>
   </parent>
 
   <groupId>com.minlia.iot</groupId>
-  <artifactId>minlia-iot-xapi</artifactId>
+  <artifactId>xapi-sensetime</artifactId>
   <version>1.0.6-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>Minlia IOT XAPI</name>
+  <packaging>jar</packaging>
+  <name>Minlia IOT XAPI Sensetime</name>
 
   <url>https://minlia.com/iot-xapi/</url>
-  <description>Minlia IOT XAPI</description>
+  <description>Minlia IOT XAPI Sensetime</description>
   <inceptionYear>2016</inceptionYear>
-
-  <dependencies>
-
-    <dependency>
-      <groupId>com.minlia.cloud</groupId>
-      <artifactId>minlia-cloud-common</artifactId>
-    </dependency>
-
-
-    <dependency>
-      <groupId>com.minlia.iot</groupId>
-      <artifactId>minlia-iot</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <modules>
-    <!-- <module>iot-brcb</module> -->
-    <!-- <module>iot-swiftpass</module> -->
-    <!--<module>iot-pooulcloud</module>-->
-    <module>iot-sensetime</module>
-    <!-- <module>iot-kuaidiniao</module> -->
-  </modules>
 
   <scm>
     <connection>
@@ -73,5 +64,4 @@
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
-
 </project>
